@@ -1,0 +1,135 @@
+Week of 9/30:
+
+	0. General setup
+
+		get_lines(filename): returns the posts as lists of words in the post
+		get_posts_with(posts, words): returns post numbers of posts with words
+
+	1. Conditional probabilities
+
+		P(A | B) = P(A && B) / P(B)
+
+		ex. 
+		P(Seizure | Epilepsy) = P(Seizure && Epilepsy) / P(Epilepsy)
+		P(Epilepsy) = Num(Eilepsy) / Num(Posts)
+		P(Seizure && Epilepsy) = Num(Seizure and epilepsy) / Num(Posts)
+
+		Assumptions: 
+			no crazy mistakes
+			given a list of conditions
+
+		Naive method (naive())
+		(very little "other options" and simple probabilities)
+
+			n_posts = 144368.0
+
+			probability
+				epilepsy 		0.00210572980162
+				adhd 			0.0355064834312
+				schizophrenia 	0.000464091765488
+				spd 			0.0125928183531
+				aspergers 		0.00141305552477
+			
+			conditional probability
+				epilepsy, seizure 		0.375
+				adhd, schizophrenia 	0.000585251658213
+				adhd, ocd 				0.00448692937963
+
+		Problems: 
+			
+			does not include more than one word (ie, ocd not 'obsessive compulsive disorder')
+
+				alter implementation so it doesn't split by words:
+
+					probability
+						epilepsy 		0.00317937493073
+						adhd 			0.0997450958661
+						schizophrenia 	0.000997450958661
+						spd 			0.0140543610772
+						aspergers 		0.0024174332262
+					
+					conditional probability
+						epilepsy, seizure 		0.416122004357
+						adhd, schizophrenia 	0.00291666666667
+						adhd, ocd 				0.00708333333333
+
+				and include the phrases:
+
+					probability
+						epilepsy 		0.00317937493073
+						adhd 			0.107066662972
+						schizophrenia 	0.000997450958661
+						spd 			0.0140543610772
+						aspergers 		0.0024174332262
+
+					conditional probability
+						epilepsy, seizure 		0.416122004357
+						adhd, schizophrenia		0.00291666666667
+						adhd, ocd 				0.0079575596817
+
+			has no "ground truth" (?)
+			does not include instances where it appears more than once (?)
+
+	2. Cleaning posts
+
+		2a. Spelling
+
+			- lists of alternative spellings
+			- n-grams of the words
+
+		2b. Negatives
+
+	3. Generating lists of words
+
+		3a. Search queries
+
+			Queries
+
+				"My son is suffering from..."
+				"My autistic child is suffering from..."
+
+			Tools
+
+				http://www.labnol.org/internet/google-web-scraping/28450/
+				
+
+		3b. Consumer health vocabulary
+
+			http://consumerhealthvocab.org/ 
+
+	4. Clustering similar symptoms
+
+		4a. k-means???
+
+-----------------------------------------------------------------------
+
+Week of 10/12:
+
+
+	1. Try to download the rest of the forums (not just drug stuff)
+
+	Sam scraped just the stuff under supplements.  I wonder if getting more/all of the posts from the forums he used might be helpful for your project.  If it's easy to run his script again for all posts, that might help get a broader variety of posts (i.e. with more of the mental health stuff).
+
+		All the scrape_*.py files have a top_level function called scrape_*(savedir), that scrapes the stuff and saves it, by thread, in a folder (e.g., the *.tar.gz folders in the repo). (If you're using these scripts for different forums, you will need to change the base_url address of the forum that I hardcoded in. If you're changing urls and things, though, please make a copy of the python file and run that, so it's easy to remember how we got the original data). To make all_posts.txt, I think I used prepare_for_postagging() in util.py, which operates on the directories you've downloaded to. There are some other functions in util.py that I think I also used to remove some annoying unicode newline things from the output of prepare_for_postagging(), but I'm not sure if you'll need them.
+
+	2. Compare against CHV
+
+	I think starting with lists makes a lot of sense.  All the places you mentioned seemed good: CHV, UMLS, google; I'd use as many as possible in order of easiest to implement (it seems like the CHV has a nice tab separated text file that you could just compare every word to decide whether to keep it as a "medical" term or toss it as a something else term).  I'm excited that you have the joint probability stuff implemented so you can check correlations as you go!  (You'll end up with 1000s of words to compute correlations between, but we can then filter by those that are the most common and the strongest correlations.)
+
+		2a. Keep only words that are in the CHV
+		2b. Check correlations
+
+	3. Use parts of speech
+
+	I believe that Sam also tagged the words with part of speech so you can use just nouns for now (maybe adjectives at some point for stuff like non-verbal).  For nouns that don't match any of your lists above, I wonder if something like wordnet or even just checking against "all UMLS language" could help classify whether it's something medical or not.
+
+	- - - - - - - - - -
+
+	other notes
+
+	4. Don't worry about negations for now; if Sam's n-gram approach for mis-spellings is easy for you to run then use that otherwise don't worry about that for now/unless it seems to be important.
+
+	5. Doing something more sophisticated like clustering terms also seems like it'd help, but let's save that as a next step after we've done some more with (2) and (3) above.  Specifically, I'm thinking that (2) and (3) may help use determine how to do the clustering more successfully.
+
+
+
