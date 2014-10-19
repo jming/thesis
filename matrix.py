@@ -5,6 +5,9 @@ import collections
 import itertools
 import csv
 import time
+import sys
+
+ALL_POSTS = 144368
 
 # def get_all_chv(posts):
 # def get_all_cuis(posts):
@@ -56,18 +59,29 @@ def get_all_cuis(chv_trie, posts):
 
 	return cui_counter
 
+def get_cui_from_csv(file_name):
+	csv.field_size_limit(sys.maxsize)
+	cui_counter = {}
+	with open(file_name, 'rb') as f:
+		reader = csv.reader(f)
+		for row in reader:
+			cui_counter[row[0]] = row[1]
+	return cui_counter
+
 def clean_cuis(cuis, threshold):
-	for cui in cuis:
+	delete = []
+	for cui in cuis.keys():
 		if len(cuis[cui]) < threshold:
 			# print 'deleting!'
+			# print cui
 			del cuis[cui]
 	return cuis
 
-def get_cui_prob(cui1, cui2, num_posts):
+def get_cui_prob(cui1, cui2):
 	same = set(cui1) & set(cui2)
-	return float(len(same)) / len(cui2)
+	return (float(len(same)) / len(cui1), float(len(same)) / len(cui2))
 
-def get_all_prob(cuis, num_posts):
+def get_all_prob(cuis):
 
 	# print 'getting all prob'
 
@@ -76,18 +90,28 @@ def get_all_prob(cuis, num_posts):
 
 	results = []
 	for cui1,cui2 in itertools.combinations(cuis.keys(), 2):
-		# print cui1,cui2
+		print cui1,cui2
 		# results[(cui1,cui2)] = get_cui_prob(cuis[cui1], cuis[cui2], num_posts)
 		# results.append([cui1, cui2, get_cui_prob(cuis[cui1], cuis[cui2], num_posts)])
-		results.append([cui1, cui2, get_cui_prob(cuis[cui1], cuis[cui2], num_posts)])
+		p1,p2 = get_cui_prob(cuis[cui1], cuis[cui2])
+		# results.append([cui1, cui2, get_cui_prob(cuis[cui1], cuis[cui2], num_posts)])
+		results.append([cui2, cui1, p1])
+		results.append([cui1, cui2, p2])
 
 			# writer.writerows([cui1, cui2, prob])
 	return results
 
-def write_prob(prob, out_file):
+def write_list(info, out_file):
+
 	with open(out_file, 'wb') as f:
 		writer = csv.writer(f)
-		writer.writerows(prob)
+		writer.writerows(info)
+
+def write_dict(info, out_file):
+	with open(out_file, 'wb') as f:
+		writer = csv.writer(f)
+		for key,value in info.items():
+			writer.writerow([key, value])
 
 def incremental_write(chv_trie, posts, n, incr):
 
@@ -98,11 +122,12 @@ def incremental_write(chv_trie, posts, n, incr):
 
 def main():
 
-	print 'getting all posts', time.time()
-	all_posts = exploration.get_lines('all_posts.txt')
+	# print 'getting all posts', time.time()
+	# all_posts = exploration.get_lines('all_posts.txt')
+	# print len(all_posts)
 
-	print 'getting chv trie', time.time()
-	chv_trie = get_chv_trie('CHV_flatfiles_all/CHV_concepts_terms_flatfile_20110204.tsv')
+	# print 'getting chv trie', time.time()
+	# chv_trie = get_chv_trie('CHV_flatfiles_all/CHV_concepts_terms_flatfile_20110204.tsv')
 
 	# print 'testing chv trie', time.time()
 
@@ -114,20 +139,28 @@ def main():
 	# print get_all_cuis(chv_trie, ['abdnominal epilepsy autism joy'])
 
 	# all_chv = get_all_chv(all_posts)
+	# print 'getting cuis', time.time()
+	# cui_counter = get_all_cuis(chv_trie, all_posts)
+	# print cui_counter
+
+	# print 'writing cuis', time.time()
+	# write_dict(cui_counter, 'cui_counter.csv')
+
 	print 'getting cuis', time.time()
-	cui_counter = get_all_cuis(chv_trie, all_posts[:10])
+	cui_counter = get_cui_from_csv('cui_counter.csv')
+
 	# print cui_counter
 
 	print 'cleaning cuis', time.time()
-	cui_counter_cleaned = clean_cuis(cui_counter, 0)
+	cui_counter_cleaned = clean_cuis(cui_counter, 100)
+	# print len(cui_counter.keys()), len(cui_counter_cleaned.keys())
 
 	print 'getting probs', time.time()
-	all_prob = get_all_prob(cui_counter_cleaned, 10)
-	# print all_prob
+	all_prob = get_all_prob(cui_counter_cleaned)
+	# # print all_prob
 
 	print 'writing probs', time.time()
-	write_prob(all_prob, 'all_prob.csv')
-
+	write_list(all_prob, 'all_prob.csv')
 
 	# print all_prob
 
