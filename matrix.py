@@ -5,6 +5,7 @@ import collections
 import itertools
 import csv
 import time
+<<<<<<< HEAD
 import sys
 
 ALL_POSTS = 144368
@@ -41,6 +42,41 @@ def get_chv_trie(file_name):
 	return chv_trie
 
 
+=======
+
+# def get_all_chv(posts):
+# def get_all_cuis(posts):
+
+# 	print 'getting all'
+# 	# all_chv = []
+# 	cui_counter = {}
+
+# 	chv_df = chv.load_chv('CHV_flatfiles_all/CHV_concepts_terms_flatfile_20110204.tsv')
+
+# 	for i,post in enumerate(posts):
+# 		print 'post', i
+# 		post_split = post.split()
+# 		cuis = chv.find_in_chv(post_split, chv_df)
+# 		for cui in cuis:
+# 			try:
+# 				cui_counter[cui].append(i)
+# 			except KeyError:
+# 				cui_counter[cui] = [i]
+# 			# cui_counter[cui] += 1
+# 		# all_chv.append([i, post, cuis])
+
+# 	# return all_chv
+# 	return cui_counter
+
+def get_chv_trie(file_name):
+	# print 'getting chv trie', time.time()
+	chv_df = chv.load_chv(file_name)
+	chv_trie = trie.make_trie(chv_df)
+
+	return chv_trie
+
+
+>>>>>>> 5fbf8e5c8b5b2e25c8480e4a52f2a04cf7a268a1
 def get_all_cuis(chv_trie, posts):
 
 	# print 'getting all', time.time()
