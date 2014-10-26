@@ -1,2 +1,5 @@
 all_posts.txt
 all_posts.tagged.txt
+.DS_Store
+all_probs.csv
+cui_counter.csv
