@@ -1,4 +1,4 @@
-import pandas as pd
+# import pandas as pd
 _end = '_end_'
 
 # def load_chv(file_name):
