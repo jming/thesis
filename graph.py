@@ -54,6 +54,8 @@ def main():
 	print s
 	plot_array(s)
 
+main()
+
 
 
 

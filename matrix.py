@@ -47,6 +47,7 @@ def get_cui_counter_matrix(chv_trie, posts, cuis):
 	N = len(posts)
 	# M = len(cuis)
 	M = MAX_CUI+1
+	cui_rows = {}
 
 	cui_counter = dok_matrix((N,M), dtype=float32)
 
@@ -57,9 +58,13 @@ def get_cui_counter_matrix(chv_trie, posts, cuis):
 			if cui > 0:
 				cui_int = int(cui[1:])
 				# print cui_int
+				try:
+					cui_rows[cui_int] += 1.
+				except KeyError:
+					cui_rows[cui_int] = 1.
 				cui_counter[i, int(cui[1:])] = 1.
 
-	return cui_counter
+	return cui_rows,cui_counter
 
 # def get_cui_from_csv(file_name):
 # 	csv.field_size_limit(sys.maxsize)
@@ -85,7 +90,7 @@ def get_cui_counter_matrix(chv_trie, posts, cuis):
 def get_cui_sum_matrix(cui_counter):
 	return cui_counter.transpose() * cui_counter
 
-def get_cui_prob_matrix(cui_sums, cui_counter):
+def get_cui_prob_matrix(cui_rows, cui_sums, cui_counter):
 
 	cui_sums = cui_sums.todok()
 
@@ -93,25 +98,25 @@ def get_cui_prob_matrix(cui_sums, cui_counter):
 	nonzero0 = nonzero[0]
 	nonzero1 = nonzero[1]
 
-	print 'getting sums', time.time()
-	col_sums = {}
-	# print 
-	nonzero0_set = set(nonzero0)
-	print len(nonzero0_set)
-	for nz in nonzero0_set:
-		col_sums[nz] = cui_counter.getcol(nz).sum()
+	# print 'getting sums', time.time()
+	# col_sums = {}
+	# # print 
+	# nonzero0_set = set(nonzero0)
+	# print len(nonzero0_set)
+	# for nz in nonzero0_set:
+	# 	col_sums[nz] = cui_counter.getcol(nz).sum()
 
 	print 'placing divisions', time.time()
 
 	nonzero = zip(nonzero0, nonzero1)
-	print len(nonzero)
+	# print len(nonzero)
 	# print nonzero
 	for nz1,nz2 in nonzero:
 		# print nz1,nz2
 		# col_sum = cui_counter.getcol(nz1).sum()
 		# print col_sum
 		# print cui_counter.getcol(nz1)
-		cui_sums[nz1,nz2] = cui_sums[nz1,nz2] / col_sums[nz1]
+		cui_sums[nz1,nz2] = cui_sums[nz1,nz2] / cui_rows[nz1]
 
 	# print nonzero.T
 	return cui_sums
@@ -173,7 +178,7 @@ def main():
 	# print sorted(cuis_list)[-10:]
 
 	print 'getting cuis', time.time()
-	cui_counter = get_cui_counter_matrix(chv_trie, all_posts, cuis_list)
+	cui_rows,cui_counter = get_cui_counter_matrix(chv_trie, all_posts, cuis_list)
 	print cui_counter
 
 	print 'getting sums', time.time()
@@ -181,7 +186,7 @@ def main():
 	print cui_sums
 
 	print 'getting probs', time.time()
-	cui_matrix = get_cui_prob_matrix(cui_sums, cui_counter)
+	cui_matrix = get_cui_prob_matrix(cui_rows, cui_sums, cui_counter)
 	print cui_matrix
 
 	print 'writing csv', time.time()
