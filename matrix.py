@@ -11,7 +11,7 @@ import ast
 from scipy.sparse import *
 from scipy import *
 import numpy as np
-# import cPickle as pickle
+import cPickle as pickle
 
 
 
@@ -95,12 +95,16 @@ def get_cui_prob_matrix(cui_sums, cui_counter):
 
 	print 'getting sums', time.time()
 	col_sums = {}
-	for nz in set(nonzero):
+	# print 
+	nonzero0_set = set(nonzero0)
+	print len(nonzero0_set)
+	for nz in nonzero0_set:
 		col_sums[nz] = cui_counter.getcol(nz).sum()
 
 	print 'placing divisions', time.time()
 
 	nonzero = zip(nonzero0, nonzero1)
+	print len(nonzero)
 	# print nonzero
 	for nz1,nz2 in nonzero:
 		# print nz1,nz2
@@ -170,18 +174,18 @@ def main():
 
 	print 'getting cuis', time.time()
 	cui_counter = get_cui_counter_matrix(chv_trie, all_posts, cuis_list)
-	# print cui_counter
+	print cui_counter
 
 	print 'getting sums', time.time()
 	cui_sums = get_cui_sum_matrix(cui_counter)
-	# print cui_sums
+	print cui_sums
 
 	print 'getting probs', time.time()
 	cui_matrix = get_cui_prob_matrix(cui_sums, cui_counter)
-	# print cui_matrix
+	print cui_matrix
 
 	print 'writing csv', time.time()
 	write_matrix('cui_matrix.dat', cui_matrix)
 
 
-# main()
+main()

@@ -1,11 +1,11 @@
-# import pandas as pd
+import pandas as pd
 # from pandas import read_csv
 
 # column_names = ['cui','term','chv_pref_name','umls_pref_name','explanation','umls_pref','chv_pref','disparaged','freq','context','cui_score','combo','combo_notop','chv_stringid','chv_conceptid']
 column_names = ['cui', 'term', 'chv_pref_name']
 
-def load_chv_pd(file_name, limit=None):
-	chv_df = read_csv(file_name, sep='\t', names=column_names, usecols=[0,1,2])
+def load_chv(file_name, limit=None):
+	chv_df = pd.read_csv(file_name, sep='\t', names=column_names, usecols=[0,1,2])
 	if limit:
 		chv_df = chv_df[:limit]
 	# print chv_df.head()
