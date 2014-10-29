@@ -19,6 +19,7 @@ import cPickle as pickle
 
 MAX_CUI = 1321801
 
+
 def get_chv_trie(file_name, limit=None):
 	chv_df = chv.load_chv(file_name, limit)
 	chv_trie = trie.make_trie(chv_df)
@@ -26,6 +27,7 @@ def get_chv_trie(file_name, limit=None):
 	cuis_list = list(set(sorted(list(cuis.get_group(1)))))
 
 	return (cuis_list,chv_trie)
+
 
 def get_cui_counter_matrix(chv_trie, posts, cuis):
 
@@ -72,17 +74,8 @@ def get_cui_prob_matrix(cui_rows, cui_sums, cui_counter):
 
 def write_matrix(filename,matrix,csv=False):
 
-	# sio.savemat(filename, matrix)
-
 	with open(filename, 'wb') as f:
 		pickle.dump(matrix,f)
-	# if csv:
-	# 	matrix_array = matrix.toarray()
-	# 	np.savetxt(filename, matrix_array, delimiter=',')
-	# else:
-	# 	with open(filename, 'wb') as f:
-	# 		# pickle.dump(matrix, f, pickle.HIGHEST_PROTOCOL)
-	# 		pickle.dump(matrix,f,-1)
 
 def main():
 
