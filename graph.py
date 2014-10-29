@@ -1,19 +1,24 @@
 import cPickle as pickle
 import scipy
-import scipy.sparse
+# from scipy.sparse import *
+import scipy.sparse.linalg
+# import scipy.io as sio
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
+import time
 
 def read_matrix(filename):
+
+	# return sparse.dok_matrix(sio.loadmat(filename))
 	with open(filename, 'rb') as f:
 		x = pickle.load(f)
 	return x
 
+
 def write_matrix(filename, matrix):
-		matrix_array = matrix.toarray()
-		# print 'matrix arra', matrix_array
-		np.savetxt(filename, matrix_array, delimiter=',')
+	matrix_array = matrix.toarray()
+	np.savetxt(filename, matrix_array, delimiter=',')
 
 def set_plots():
 
@@ -47,12 +52,18 @@ def plot_array(array):
 
 def main():
 
-	matrix = read_matrix('cui_matrix.dat')
-	write_matrix('cui_matrix.csv', matrix)
+	print 'reading matrix', time.time()
+	matrix = read_matrix('cui_matrix_small.pickle')
+	print matrix
 
+	print 'calc svd', time.time()
 	u,s,vt = scipy.sparse.linalg.svds(matrix)
 	print s
 	plot_array(s)
+
+	print 'writing matrix', time.time()
+	write_matrix('cui_matrix_small.csv', matrix)
+	
 
 main()
 

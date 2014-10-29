@@ -3,4 +3,5 @@ all_posts.tagged.txt
 .DS_Store
 all_probs.csv
 cui_counter.csv
-cui_matrix.dat
+cui_matrix.pkl
+*.pkl
