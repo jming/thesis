@@ -15,7 +15,6 @@ def read_matrix(filename):
 		x = pickle.load(f)
 	return x
 
-
 def write_matrix(filename, matrix):
 	matrix_array = matrix.toarray()
 	np.savetxt(filename, matrix_array, delimiter=',')
@@ -64,7 +63,6 @@ def main():
 	print 'writing matrix', time.time()
 	write_matrix('cui_matrix_small.csv', matrix)
 	
-
 main()
 
 
