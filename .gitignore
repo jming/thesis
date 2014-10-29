@@ -3,9 +3,9 @@ all_posts.tagged.txt
 .DS_Store
 all_probs.csv
 cui_counter.csv
-<<<<<<< HEAD
 cui_matrix.pkl
 *.pkl
-=======
 cui_matrix.dat
->>>>>>> 515867567b33ec756f8a51d209ce7badc89c71d1
+*.pickle
+*.dat
+*.csv
