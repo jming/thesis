@@ -40,28 +40,32 @@ def set_plots():
 	rcParams['patch.facecolor'] = dark2_colors[0]
 	rcParams['font.family'] = 'StixGeneral'
 
-def plot_array(array):
+def calc_svd(matrix):
 
-	dims = np.arange(500, 1500, 20)
+	U,s,Vh = scipy.sparse.linalg.svds(matrix)
+	# V = Vh.T 
 
-	plt.figure()
-	plt.plot(dims, array)
+	print s
+	# [  52.06867981   53.17331696   58.20323181   74.85311127  109.54414368 291.88696289]
+
+	plt.plot(s)
 	plt.show()
 
 
 def main():
 
 	print 'reading matrix', time.time()
-	matrix = read_matrix('cui_matrix_small.pickle')
+	matrix = read_matrix('cui_matrix.pickle')
 	print matrix
 
 	print 'calc svd', time.time()
-	u,s,vt = scipy.sparse.linalg.svds(matrix)
-	print s
-	plot_array(s)
+	calc_svd(matrix)
+	# U,s,Vh = scipy.sparse.linalg.svds(matrix)
+	# print s
+	# plot_array(s)
 
 	print 'writing matrix', time.time()
-	write_matrix('cui_matrix_small.csv', matrix)
+	write_matrix('cui_matrix.csv', matrix)
 	
 main()
 

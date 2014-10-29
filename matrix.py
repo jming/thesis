@@ -83,10 +83,10 @@ def main():
 	all_posts = exploration.get_lines('all_posts.txt')
 
 	print 'getting chv trie', time.time()
-	cuis_list,chv_trie = get_chv_trie('CHV_flatfiles_all/CHV_concepts_terms_flatfile_20110204.tsv', 1000)
+	cuis_list,chv_trie = get_chv_trie('CHV_flatfiles_all/CHV_concepts_terms_flatfile_20110204.tsv')
 
 	print 'getting cuis', time.time()
-	cui_rows,cui_counter = get_cui_counter_matrix(chv_trie, all_posts[:100], cuis_list)
+	cui_rows,cui_counter = get_cui_counter_matrix(chv_trie, all_posts, cuis_list)
 	print cui_counter
 
 	print 'getting sums', time.time()
@@ -98,7 +98,7 @@ def main():
 	print cui_matrix
 
 	print 'writing csv', time.time()
-	write_matrix('cui_matrix_small.pickle', cui_matrix)
+	write_matrix('cui_matrix.pickle', cui_matrix)
 
 
 main()
