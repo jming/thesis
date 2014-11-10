@@ -1,0 +1,8 @@
+getting all posts 1415638828.49
+getting chv trie 1415638828.72
+getting cuis 1415638834.92
+writing csv 1415638896.26
+getting sums 1415638934.02
+writing csv 1415638969.96
+getting probs 1415638978.12
+placing divisions 1415639002.68

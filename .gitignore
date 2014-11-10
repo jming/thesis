@@ -1,11 +1,8 @@
 all_posts.txt
 all_posts.tagged.txt
 .DS_Store
-all_probs.csv
-cui_counter.csv
-cui_matrix.pkl
 *.pkl
-cui_matrix.dat
 *.pickle
 *.dat
 *.csv
+*.mat

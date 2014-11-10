@@ -42,7 +42,7 @@ def set_plots():
 
 def calc_svd(matrix):
 
-	U,s,Vh = scipy.sparse.linalg.svds(matrix)
+	U,s,Vh = scipy.sparse.linalg.svds(matrix,k=50)
 	# V = Vh.T 
 
 	print s
@@ -64,8 +64,8 @@ def main():
 	# print s
 	# plot_array(s)
 
-	print 'writing matrix', time.time()
-	write_matrix('cui_matrix.csv', matrix)
+	# print 'writing matrix', time.time()
+	# write_matrix('cui_matrix.csv', matrix)
 	
 main()
 
