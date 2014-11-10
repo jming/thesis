@@ -1,5 +1,7 @@
 all_posts.txt
 all_posts.tagged.txt
+autism_words.txt
+autism_vocab.txt
 .DS_Store
 *.pkl
 *.pickle
