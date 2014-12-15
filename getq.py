@@ -3,6 +3,7 @@ import time
 import cPickle as pickle
 from scipy.sparse import *
 from scipy import *
+import scipy.io
 import numpy as np
 
 # get Q matrix
@@ -17,9 +18,8 @@ def get_cui_trie(filename):
 
 	# load_chv
 	column_names = ['cui', 'term', 'chv_pref_name']
-	# cui_df = pd.read_csv(filename, sep='\t', names=column_names, usecols=[0,1,2])
-	cui_df = pd.read_csv(filename, names=column_names, usecols=[0,1,2])
-
+	cui_df = pd.read_csv(filename, sep='\t', names=column_names, usecols=[0,1,2])
+	# cui_df = pd.read_csv(filename, names=column_names, usecols=[0,1,2])
 
 	# build trie
 	cui_trie = make_trie(cui_df)
@@ -52,6 +52,15 @@ def in_trie(trie, word):
 			return current_dict[_end]
 		else:
 			return -1
+
+def write_list(filename, lst):
+
+	with open(filename, 'a') as f:
+		for l in lst:
+			try:
+				f.write('%s\n' % l)
+			except:
+				f.write(' \n')
 
 def get_cui_counter(cui_trie, posts, cuis):
 
@@ -110,28 +119,31 @@ if __name__ == '__main__':
 	cuis_list, cui_trie = get_cui_trie('CHV_flatfiles_all/CHV_concepts_terms_flatfile_20110204.tsv')
 	print 'number of cuis', len(cuis_list)
 
+	print 'writing cuis list', time.time()
+	write_list('cui_list.txt', cuis_list)
+
 	# get sums
 	print 'getting cui counter', time.time()
 	cui_rows, cui_counter = get_cui_counter(cui_trie, all_posts, cuis_list)
 
 	# store cui counter
 	print 'writing cui counter', time.time()
-	write_matrix('cui_counter.pickle', cui_counter)
+	scipy.io.savemat('cui_counter.mat', {'M': cui_counter.transpose().tolil()}, oned_as='column')
 
-	# get cui cooccurrence matrix
-	print 'getting cooccurrence', time.time()
-	cui_sums = cui_counter.transpose() * cui_counter
+	# # get cui cooccurrence matrix
+	# print 'getting cooccurrence', time.time()
+	# cui_sums = cui_counter.transpose() * cui_counter
 
-	# store cui cooccur
-	print 'writing cui cooccurrence', time.time()
-	write_matrix('cui_cooccur.pickle', cui_sums)
+	# # store cui cooccur
+	# print 'writing cui cooccurrence', time.time()
+	# write_matrix('cui_cooccur.pickle', cui_sums)
 
-	# normalize matrix
-	print 'normalizing matrix', time.time()
-	cui_matrix = normalize_matrix(cui_rows, cui_sums, cui_counter)
+	# # normalize matrix
+	# print 'normalizing matrix', time.time()
+	# cui_matrix = normalize_matrix(cui_rows, cui_sums, cui_counter)
 
-	# store normalized matrix
-	print 'writing normalized matrix', time.time()
-	write_matrix('cui_matrix.pickle', cui_matrix)
+	# # store normalized matrix
+	# print 'writing normalized matrix', time.time()
+	# write_matrix('cui_matrix.pickle', cui_matrix)
 
 
