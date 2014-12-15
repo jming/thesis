@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import pandas as pd
 import time
 import cPickle as pickle
@@ -111,6 +113,7 @@ def get_cui_counter(cui_trie, posts, cuis):
 			# cui = in_trie(cui_trie, word)
 			# if cui > 0:
 		cuis = in_trie(cui_trie, post)
+		print 'cuis', cuis
 		if cuis:
 			for cui in cuis:
 				cui_int = int(cui[1:])
@@ -176,10 +179,13 @@ if __name__ == '__main__':
 	# get sums
 	print 'getting cui counter', time.time()
 	cui_rows, cui_counter = get_cui_counter(cui_trie, all_posts, cuis_list)
+	print 'cui_counter', cui_counter
 
 	# store cui counter
 	print 'writing cui counter', time.time()
-	scipy.io.savemat(cui_outfile, {'M': cui_counter.transpose().tolil()}, oned_as='column')
+	scipy.io.savemat(matrix_outfile, {'M': cui_counter.transpose().tolil()}, oned_as='column')
+
+	sys.exit()
 
 	# # get cui cooccurrence matrix
 	# print 'getting cooccurrence', time.time()
