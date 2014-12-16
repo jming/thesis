@@ -21,8 +21,8 @@ def get_cui_trie(filename):
 
 	# load_chv
 	column_names = ['cui', 'term', 'chv_pref_name']
-	# cui_df = pd.read_csv(filename, sep='\t', names=column_names, usecols=[0,1,2])
-	cui_df = pd.read_csv(filename, names=column_names, usecols=[0,1,2])
+	cui_df = pd.read_csv(filename, sep='\t', names=column_names, usecols=[0,1,2])
+	# cui_df = pd.read_csv(filename, names=column_names, usecols=[0,1,2])
 
 	# build trie
 	cui_trie = make_trie(cui_df)
@@ -43,45 +43,93 @@ def make_trie(df):
 		current_dict = current_dict.setdefault(_end, row['cui'])
 	return root
 
+
 def in_trie(trie, word):
 
-	curr_matches = []
 	matches = []
-
+	is_passed = False
+	passed_letters = -1
 	current_dict = trie
-	for i,letter in enumerate(word):
 
-		# print i, letter, current_dict
-		
+	for i, letter in enumerate(word):
+
 		is_next = False
 
+		print i, letter, word
+
 		if _end in current_dict:
-			# print 'end in current_dict'
-			curr_matches.append(current_dict[_end])
+			print 'end in dict'
+			matches.append(current_dict[_end])
+			passed_letters = i
 			is_next = True
-			#  this needs to be handled differently
 
 		if letter in current_dict:
-			# print 'letter in current_dict'
+			print 'letter in dict'
 			current_dict = current_dict[letter]
 			is_next = True
 
-		# print is_next 
-
 		if is_next and letter == ' ':
-			# print 'letter is space'
-			matches += in_trie(trie, word[i+1:])
+			passed_letters = i+1
 
 		if not is_next:
-			# print 'not is_next'
-			matches += in_trie(trie, word[i+1:])
-			matches += curr_matches
+			print 'not is_next'
+			if passed_letters == -1 or passed_letters == 0 or letter == ' ':
+				passed_letters = i+1
+			matches += in_trie(trie, word[passed_letters:])
 			break
 
 	if _end in current_dict:
 		matches.append(current_dict[_end])
 
+	# print matches
 	return list(set(matches))
+
+
+# trie = {'a':{'b':{'_end_':'1', ' ':{'c':{'d':{'_end_':'2'}}}}}, 'f':{'e':{'_end_':'3'}}}
+# print in_trie(trie, 'ab')
+# print in_trie(trie, 'ab cd')
+# print in_trie(trie, 'fe')
+# print in_trie(trie, 'ab cfe')
+
+# def in_trie(trie, word):
+
+# 	passed_letters = ''
+# 	matches = []
+
+# 	current_dict = trie
+# 	for i,letter in enumerate(word):
+
+# 		# print i, letter, current_dict
+		
+# 		is_next = False
+
+# 		if _end in current_dict:
+# 			print 'end in current_dict'
+# 			matches.append(current_dict[_end])
+# 			is_next = True
+# 			#  this needs to be handled differently
+
+# 		if letter in current_dict:
+# 			print 'letter in current_dict'
+# 			current_dict = current_dict[letter]
+# 			is_next = True
+
+# 		# print is_next 
+
+# 		if is_next and letter == ' ':
+# 			print 'letter is space'
+# 			# matches += in_trie(trie, word[i+1:])
+
+# 		if not is_next:
+# 			# print 'not is_next'
+# 			matches += curr_matches
+# 			matches += in_trie(trie, word[i+1:])
+# 			break
+
+# 	if _end in current_dict:
+# 		matches.append(current_dict[_end])
+
+# 	return list(set(matches))
 
 
 	# else:
@@ -108,12 +156,14 @@ def get_cui_counter(cui_trie, posts, cuis):
 	cui_counter = dok_matrix((N,M), dtype=float32)
 
 	for i,post in enumerate(posts):
+		print 'doing post', i, 'length', len(post)
 		# post_split = post.split()
 		# for word in post_split:
 			# cui = in_trie(cui_trie, word)
 			# if cui > 0:
 		cuis = in_trie(cui_trie, post)
 		print 'cuis', cuis
+		#
 		if cuis:
 			for cui in cuis:
 				cui_int = int(cui[1:])
@@ -147,6 +197,8 @@ def write_matrix(filename, matrix, csv=False):
 
 ##########################################
 
+
+
 if __name__ == '__main__':
 
 
@@ -161,7 +213,6 @@ if __name__ == '__main__':
 	else:
 		print 'usage ./getq.py post_infile cui_infile matrix_outfile cui_outfile'
 		sys.exit()
-
 
 	# get posts
 	print 'getting all posts', time.time()
@@ -179,7 +230,7 @@ if __name__ == '__main__':
 	# get sums
 	print 'getting cui counter', time.time()
 	cui_rows, cui_counter = get_cui_counter(cui_trie, all_posts, cuis_list)
-	print 'cui_counter', cui_counter
+	# print 'cui_counter', cui_counter
 
 	# store cui counter
 	print 'writing cui counter', time.time()
