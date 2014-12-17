@@ -56,49 +56,62 @@ def make_trie(df):
 
 
 def in_trie(trie, word):
-
-	matches = []
-	is_passed = False
-	passed_letters = -1
-	is_space = False
 	current_dict = trie
-
-	for i, letter in enumerate(word):
-
-		is_next = False
-
-		# print i, letter, word
-
-		if letter == ' ':
-			is_space = True
-
-		if _end in current_dict:
-			# print 'end in dict'
-			if is_space:
-				matches.append(current_dict[_end])
-				passed_letters = i
-				is_next = True
-
+	for letter in word:
 		if letter in current_dict:
-			# print 'letter in dict'
 			current_dict = current_dict[letter]
-			is_next = True
+		else:
+			return -1
+	else:
+		if _end in current_dict:
+			return current_dict[_end]
+		else:
+			return -1
 
-		if is_next and is_space:
-			passed_letters = i+1
+# def in_trie(trie, word):
 
-		if not is_next and is_space:
-			# print 'not is_next'
-			if is_space and passed_letters == -1 or passed_letters == 0:
-				passed_letters = i+1
-			matches += in_trie(trie, word[passed_letters:])
-			break
+# 	matches = []
+# 	is_passed = False
+# 	passed_letters = -1
+# 	is_space = False
+# 	current_dict = trie
 
-	if _end in current_dict:
-		matches.append(current_dict[_end])
+# 	for i, letter in enumerate(word):
 
-	# print matches
-	return list(set(matches))
+# 		is_next = False
+
+# 		# print i, letter, word
+
+# 		if letter == ' ':
+# 			is_space = True
+
+# 		if _end in current_dict:
+# 			# print 'end in dict'
+# 			if is_space:
+# 				matches.append(current_dict[_end])
+# 				passed_letters = i
+# 				is_next = True
+
+# 		if letter in current_dict:
+# 			# print 'letter in dict'
+# 			current_dict = current_dict[letter]
+# 			is_next = True
+
+# 		if is_next and is_space:
+# 			passed_letters = i+1
+
+# 		if not is_next and is_space:
+# 			# print 'not is_next'
+# 			if is_space and passed_letters == -1 or passed_letters == 0:
+# 				passed_letters = i+1
+# 			matches += in_trie(trie, word[passed_letters:])
+# 			break
+
+# 	if _end in current_dict:
+# 		matches.append(current_dict[_end])
+
+# 	# print matches
+# 	return list(set(matches))
 
 def write_list(filename, lst):
 
@@ -119,15 +132,15 @@ def get_cui_counter(cui_trie, posts, cuis):
 
 	for i,post in enumerate(posts):
 		print 'doing post', i, 'length', len(post), time.time()
-		# post_split = post.split()
-		# for word in post_split:
-			# cui = in_trie(cui_trie, word)
-			# if cui > 0:
-		cuis = in_trie(cui_trie, post)
+		post_split = post.split()
+		for word in post_split:
+			cui = in_trie(cui_trie, word)
+			if cui > 0:
+		# cuis = in_trie(cui_trie, post)
 		# print 'cuis', cuis
 		#
-		if cuis:
-			for cui in cuis:
+		# if cuis:
+			# for cui in cuis:
 				cui_int = int(cui[1:])
 				try:
 					cui_rows[cui_int] += 1.
