@@ -78,6 +78,8 @@ new_indptr = new_indptr[0:indptr_counter]
 new_indices = new_indices[0:new_indptr[indptr_counter-1]]
 new_data = new_data[0:new_indptr[indptr_counter-1]]
 
+# print new_data, new_indices, new_indptr
+
 M = scipy.sparse.csr_matrix((new_data, new_indices, new_indptr))
 M = M.tocsc()
 scipy.io.savemat(output_matrix, {'M' : M}, oned_as='column')
