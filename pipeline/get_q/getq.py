@@ -60,6 +60,7 @@ def in_trie(trie, word):
 	matches = []
 	is_passed = False
 	passed_letters = -1
+	is_space = False
 	current_dict = trie
 
 	for i, letter in enumerate(word):
@@ -68,23 +69,27 @@ def in_trie(trie, word):
 
 		# print i, letter, word
 
+		if letter == ' ':
+			is_space = True
+
 		if _end in current_dict:
 			# print 'end in dict'
-			matches.append(current_dict[_end])
-			passed_letters = i
-			is_next = True
+			if is_space:
+				matches.append(current_dict[_end])
+				passed_letters = i
+				is_next = True
 
 		if letter in current_dict:
 			# print 'letter in dict'
 			current_dict = current_dict[letter]
 			is_next = True
 
-		if is_next and letter == ' ':
+		if is_next and is_space:
 			passed_letters = i+1
 
-		if not is_next:
+		if not is_next and is_space:
 			# print 'not is_next'
-			if passed_letters == -1 or passed_letters == 0 or letter == ' ':
+			if is_space and passed_letters == -1 or passed_letters == 0:
 				passed_letters = i+1
 			matches += in_trie(trie, word[passed_letters:])
 			break
@@ -119,7 +124,7 @@ def get_cui_counter(cui_trie, posts, cuis):
 			# cui = in_trie(cui_trie, word)
 			# if cui > 0:
 		cuis = in_trie(cui_trie, post)
-		print 'cuis', cuis
+		# print 'cuis', cuis
 		#
 		if cuis:
 			for cui in cuis:
@@ -172,29 +177,29 @@ if __name__ == '__main__':
 		sys.exit()
 
 	# get posts
-	# print 'getting all posts', time.time()
-	# all_posts = [line.strip() for line in open(post_infile)]
-	# print 'number of posts', len(all_posts)
+	print 'getting all posts', time.time()
+	all_posts = [line.strip() for line in open(post_infile)]
+	print 'number of posts', len(all_posts)
 
 	# get chv trie
 	print 'getting cui trie', time.time()
 	cuis_list, cui_trie, cui_dict = get_cui_trie(cui_infile)
 	print 'number of cuis', len(cuis_list)
 
-	# print 'writing cuis list', time.time()
-	# write_list(cui_outfile, cuis_list)
+	print 'writing cuis list', time.time()
+	write_list(cui_outfile, cuis_list)
 
 	print 'writing cuis dict', time.time()
 	write_list('cui_dict.txt', cui_dict)
 
-	# # get sums
-	# print 'getting cui counter', time.time()
-	# cui_rows, cui_counter = get_cui_counter(cui_trie, all_posts, cuis_list)
-	# # print 'cui_counter', cui_counter
+	# get sums
+	print 'getting cui counter', time.time()
+	cui_rows, cui_counter = get_cui_counter(cui_trie, all_posts, cuis_list)
+	# print 'cui_counter', cui_counter
 
-	# # store cui counter
-	# print 'writing cui counter', time.time()
-	# scipy.io.savemat(matrix_outfile, {'M': cui_counter.transpose()}, oned_as='column')
+	# store cui counter
+	print 'writing cui counter', time.time()
+	scipy.io.savemat(matrix_outfile, {'M': cui_counter.transpose()}, oned_as='column')
 
 	sys.exit()
 
