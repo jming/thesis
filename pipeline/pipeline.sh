@@ -29,5 +29,5 @@ echo 'starting translation'
 for K in 20 50 100
 do
 	echo 'translating $K'
-	python get_result/translate.py result3/result\_out.$K.topwords result3/result\_out.$K.topwords.translate cui_dict.txt
+	python get_result/translate.py result3/result\_out.$K.topwords result4/result\_out.$K.topwords.translate cui_dict.txt
 done

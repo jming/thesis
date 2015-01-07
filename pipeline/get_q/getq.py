@@ -21,8 +21,8 @@ def get_cui_trie(filename):
 
 	# load_chv
 	column_names = ['cui', 'term', 'chv_pref_name']
-	cui_df = pd.read_csv(filename, sep='\t', names=column_names, usecols=[0,1,2])
-	# cui_df = pd.read_csv(filename, names=column_names, usecols=[0,1,2])
+	# cui_df = pd.read_csv(filename, sep='\t', names=column_names, usecols=[0,1,2])
+	cui_df = pd.read_csv(filename, names=column_names, usecols=[0,1,2])
 
 	# build trie
 	cui_trie = make_trie(cui_df)
@@ -55,18 +55,50 @@ def make_trie(df):
 	return root
 
 
+# def in_trie(trie, word):
+# 	current_dict = trie
+# 	for letter in word:
+# 		if letter in current_dict:
+# 			current_dict = current_dict[letter]
+# 		else:
+# 			return -1
+# 	else:
+# 		if _end in current_dict:
+# 			return current_dict[_end]
+# 		else:
+# 			return -1
+
 def in_trie(trie, word):
+
+	matches = []
+
 	current_dict = trie
-	for letter in word:
+
+	for i,letter in enumerate(word):
+
+		# print i, letter, word
+
 		if letter in current_dict:
+			# print 'in dict'
 			current_dict = current_dict[letter]
 		else:
-			return -1
-	else:
+			current_dict = trie
+
 		if _end in current_dict:
-			return current_dict[_end]
-		else:
-			return -1
+		 # and word[i+1] == ' ' or i == len(word) - 1:
+		 	if i < len(word) - 1 and word[i+1] == ' ':
+				# print 'end in dict'
+				matches.append(current_dict[_end])
+
+	if _end in current_dict:
+		# print 'final end in dict'
+		matches.append(current_dict[_end])
+
+	# print 'matches', matches
+	return matches
+
+
+
 
 # def in_trie(trie, word):
 
@@ -133,14 +165,14 @@ def get_cui_counter(cui_trie, posts, cuis):
 	for i,post in enumerate(posts):
 		print 'doing post', i, 'length', len(post), time.time()
 		post_split = post.split()
-		for word in post_split:
-			cui = in_trie(cui_trie, word)
-			if cui > 0:
-		# cuis = in_trie(cui_trie, post)
-		# print 'cuis', cuis
-		#
-		# if cuis:
-			# for cui in cuis:
+		# for word in post_split:
+		# 	cui = in_trie(cui_trie, word)
+		# 	if cui > 0:
+		cuis = in_trie(cui_trie, post)
+		print 'cuis', cuis
+		
+		if cuis:
+			for cui in cuis:
 				cui_int = int(cui[1:])
 				try:
 					cui_rows[cui_int] += 1.
@@ -176,7 +208,6 @@ def write_matrix(filename, matrix, csv=False):
 
 if __name__ == '__main__':
 
-
 	if len(sys.argv) > 4:
 
 		post_infile = sys.argv[1]
@@ -199,20 +230,20 @@ if __name__ == '__main__':
 	cuis_list, cui_trie, cui_dict = get_cui_trie(cui_infile)
 	print 'number of cuis', len(cuis_list)
 
-	print 'writing cuis list', time.time()
-	write_list(cui_outfile, cuis_list)
+	# print 'writing cuis list', time.time()
+	# write_list(cui_outfile, cuis_list)
 
-	print 'writing cuis dict', time.time()
-	write_list('cui_dict.txt', cui_dict)
+	# print 'writing cuis dict', time.time()
+	# write_list('cui_dict.txt', cui_dict)
 
 	# get sums
 	print 'getting cui counter', time.time()
 	cui_rows, cui_counter = get_cui_counter(cui_trie, all_posts, cuis_list)
-	# print 'cui_counter', cui_counter
+	print 'cui_counter', cui_counter
 
 	# store cui counter
-	print 'writing cui counter', time.time()
-	scipy.io.savemat(matrix_outfile, {'M': cui_counter.transpose()}, oned_as='column')
+	# print 'writing cui counter', time.time()
+	# scipy.io.savemat(matrix_outfile, {'M': cui_counter.transpose()}, oned_as='column')
 
 	sys.exit()
 
