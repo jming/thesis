@@ -21,8 +21,8 @@ def get_cui_trie(filename):
 
 	# load_chv
 	column_names = ['cui', 'term', 'chv_pref_name']
-	# cui_df = pd.read_csv(filename, sep='\t', names=column_names, usecols=[0,1,2])
-	cui_df = pd.read_csv(filename, names=column_names, usecols=[0,1,2])
+	cui_df = pd.read_csv(filename, sep='\t', names=column_names, usecols=[0,1,2])
+	# cui_df = pd.read_csv(filename, names=column_names, usecols=[0,1,2])
 
 	# build trie
 	cui_trie = make_trie(cui_df)
@@ -85,8 +85,7 @@ def in_trie(trie, word):
 			current_dict = trie
 
 		if _end in current_dict:
-		 # and word[i+1] == ' ' or i == len(word) - 1:
-		 	if i < len(word) - 1 and word[i+1] == ' ':
+		 	if i < len(word) - 1 and not word[i+1].isalpha():
 				# print 'end in dict'
 				matches.append(current_dict[_end])
 
@@ -230,20 +229,20 @@ if __name__ == '__main__':
 	cuis_list, cui_trie, cui_dict = get_cui_trie(cui_infile)
 	print 'number of cuis', len(cuis_list)
 
-	# print 'writing cuis list', time.time()
-	# write_list(cui_outfile, cuis_list)
+	print 'writing cuis list', time.time()
+	write_list(cui_outfile, cuis_list)
 
-	# print 'writing cuis dict', time.time()
-	# write_list('cui_dict.txt', cui_dict)
+	print 'writing cuis dict', time.time()
+	write_list('cui_dict.txt', cui_dict)
 
 	# get sums
 	print 'getting cui counter', time.time()
 	cui_rows, cui_counter = get_cui_counter(cui_trie, all_posts, cuis_list)
-	print 'cui_counter', cui_counter
+	# print 'cui_counter', cui_counter
 
 	# store cui counter
-	# print 'writing cui counter', time.time()
-	# scipy.io.savemat(matrix_outfile, {'M': cui_counter.transpose()}, oned_as='column')
+	print 'writing cui counter', time.time()
+	scipy.io.savemat(matrix_outfile, {'M': cui_counter.transpose()}, oned_as='column')
 
 	sys.exit()
 
