@@ -29,9 +29,11 @@ def translate_dict(cuidict):
 
 	with open(cuidict, 'r') as f:
 		for line in f:
-			l_split = line.split()
+			# line = line.rstrip()
+			l_split = line.split('\t')
 			cui_dict[l_split[0]] = l_split[1]
 
+	# print cui_dict['C0424578']
 	return cui_dict
 
 
