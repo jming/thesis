@@ -20,12 +20,12 @@ _end = '_end_'
 def get_cui_trie(filename, mod=False):
 
 	# load_chv
-	if not mod:
-		column_names = ['cui', 'term', 'chv_pref_name']
-		cui_df = pd.read_csv(filename, sep='\t', names=column_names, usecols=[0,1,2])
+	# if not mod:
+	# 	column_names = ['cui', 'term', 'chv_pref_name']
+	# 	cui_df = pd.read_csv(filename, sep='\t', names=column_names, usecols=[0,1,2])
 		# cui_df = pd.read_csv(filename, names=column_names, usecols=[0,1,2])
-	else:
-		cui_df = pd.read_csv(filename)
+	# else:
+	cui_df = pd.read_csv(filename)
 
 	# build trie
 	cui_trie = make_trie(cui_df)
@@ -168,7 +168,7 @@ def in_trie(trie, word):
 
 def write_list(filename, lst):
 
-	with open(filename, 'a') as f:
+	with open(filename, 'w') as f:
 		for l in lst:
 			try:
 				f.write('%s\n' % l)
