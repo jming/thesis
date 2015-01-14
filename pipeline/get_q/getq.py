@@ -17,14 +17,12 @@ _end = '_end_'
 
 ######################################
 
-def get_cui_trie(filename, mod=False):
+def get_cui_trie(filename):
 
 	# load_chv
-	# if not mod:
-	# 	column_names = ['cui', 'term', 'chv_pref_name']
-	# 	cui_df = pd.read_csv(filename, sep='\t', names=column_names, usecols=[0,1,2])
-		# cui_df = pd.read_csv(filename, names=column_names, usecols=[0,1,2])
-	# else:
+	# column_names = ['cui', 'term', 'chv_pref_name']
+	# cui_df = pd.read_csv(filename, sep='\t', names=column_names, usecols=[0,1,2])
+	# cui_df = pd.read_csv(filename, names=column_names, usecols=[0,1,2])
 	cui_df = pd.read_csv(filename)
 
 	# build trie
@@ -57,20 +55,6 @@ def make_trie(df):
 		current_dict = current_dict.setdefault(_end, row['cui'])
 	return root
 
-
-# def in_trie(trie, word):
-# 	current_dict = trie
-# 	for letter in word:
-# 		if letter in current_dict:
-# 			current_dict = current_dict[letter]
-# 		else:
-# 			return -1
-# 	else:
-# 		if _end in current_dict:
-# 			return current_dict[_end]
-# 		else:
-# 			return -1
-
 def in_trie(trie, word):
 
 	matches = []
@@ -80,91 +64,36 @@ def in_trie(trie, word):
 
 	i = 0
 
-	# for i,letter in enumerate(word):
-	# for i in range(len(word)):
 	while i < len(word):
 
 		letter = word[i]
 
-		# print i, letter, word
-		
-
-
+		# if letter matches, move to next dictionary
 		if letter in current_dict:
-			# print 'in dict'
 			current_dict = current_dict[letter]
 			if not letter.isalpha():
-				# print 'passed_index', i
 				passed_index = i
 		else:
-			# if passed a space, start over at last index after space
+			
 			current_dict = trie
+
+			# if passed a space, start over at last index after space
 			if passed_index > 0:
-				# print 'has_passed'
 				i = passed_index
 				passed_index = -1
 
+		# if end of word is found, append
 		if _end in current_dict:
 		 	if i < len(word) - 1 and not word[i+1].isalpha():
-				# print 'end in dict'
 				matches.append(current_dict[_end])
 
 		i += 1
 
+	# if end of word is found, append
 	if _end in current_dict:
-		# print 'final end in dict'
 		matches.append(current_dict[_end])
 
-	# print 'matches', matches
 	return list(set(matches))
-
-
-
-
-# def in_trie(trie, word):
-
-# 	matches = []
-# 	is_passed = False
-# 	passed_letters = -1
-# 	is_space = False
-# 	current_dict = trie
-
-# 	for i, letter in enumerate(word):
-
-# 		is_next = False
-
-# 		# print i, letter, word
-
-# 		if letter == ' ':
-# 			is_space = True
-
-# 		if _end in current_dict:
-# 			# print 'end in dict'
-# 			if is_space:
-# 				matches.append(current_dict[_end])
-# 				passed_letters = i
-# 				is_next = True
-
-# 		if letter in current_dict:
-# 			# print 'letter in dict'
-# 			current_dict = current_dict[letter]
-# 			is_next = True
-
-# 		if is_next and is_space:
-# 			passed_letters = i+1
-
-# 		if not is_next and is_space:
-# 			# print 'not is_next'
-# 			if is_space and passed_letters == -1 or passed_letters == 0:
-# 				passed_letters = i+1
-# 			matches += in_trie(trie, word[passed_letters:])
-# 			break
-
-# 	if _end in current_dict:
-# 		matches.append(current_dict[_end])
-
-# 	# print matches
-# 	return list(set(matches))
 
 def write_list(filename, lst):
 
@@ -185,21 +114,22 @@ def get_cui_counter(cui_trie, posts, cuis):
 
 	for i,post in enumerate(posts):
 		print 'doing post', i, 'length', len(post), time.time()
-		post_split = post.split()
-		# for word in post_split:
-		# 	cui = in_trie(cui_trie, word)
-		# 	if cui > 0:
+
+		# get cuis from post
 		cuis = in_trie(cui_trie, post)
-		# print 'cuis', cuis
 		
 		if cuis:
 			for cui in cuis:
 				cui_int = int(cui[1:])
+
+				# add to row count
 				try:
 					cui_rows[cui_int] += 1.
 				except KeyError:
 					cui_rows[cui_int] = 1.
-				cui_counter[i, cui_int] = 1.
+
+				# add to post-concept count matrix
+				cui_counter[i, cui_int] += 1.
 
 	return cui_rows, cui_counter
 
@@ -248,7 +178,7 @@ if __name__ == '__main__':
 
 	# get chv trie
 	print 'getting cui trie', time.time()
-	cuis_list, cui_trie, cui_dict = get_cui_trie(cui_infile, True)
+	cuis_list, cui_trie, cui_dict = get_cui_trie(cui_infile)
 	print 'number of cuis', len(cuis_list)
 
 	print 'writing cuis list', time.time()

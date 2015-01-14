@@ -8,10 +8,10 @@ def do_recovery(Q, anchors, loss, params):
     if loss == "originalRecover":
         return (Recover(Q, anchors), None)
     elif loss == "KL" or "L2" in loss:
-        A, colsums = nonNegativeRecover(Q, anchors, params.log_prefix, loss, params.max_threads, epsilon=params.eps)
+        A, colsums, R = nonNegativeRecover(Q, anchors, params.log_prefix, loss, params.max_threads, epsilon=params.eps)
         hp = colsums
         
-        return A, hp
+        return A, hp, R
     else:
         print "unrecognized loss function", loss, ". Options are KL,L2 or originalRecover"
         
@@ -526,7 +526,11 @@ def nonNegativeRecover(Q, anchors, outfile_name, divergence, max_threads, initia
     #recoveryLog.close()
     topic_likelihoodLog.close()
     word_likelihoodLog.close()
-    return A, colsums
+
+    # get R
+    A_tall = linalg.pinv(A)
+    R = A_tall.dot(Q).dot(A_tall.transpose())
+    return A, colsums, R
 
 
 
