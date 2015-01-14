@@ -26,10 +26,12 @@ def generate_Q_matrix(M, words_per_doc=None):
         if words_per_doc != None and wpd != words_per_doc:
             print 'Error: words per doc incorrect'
         
-        row_indices = M.indices[start:end]
-        
-        diag_M[row_indices] += M.data[start:end]/(wpd*(wpd-1))
-        M.data[start:end] = M.data[start:end]/math.sqrt(wpd*(wpd-1))
+        if wpd == 0 or wpd == 1:
+            M.data[start:end] = 0
+        else:
+            row_indices = M.indices[start:end]
+            diag_M[row_indices] += M.data[start:end]/(wpd*(wpd-1))
+            M.data[start:end] = M.data[start:end]/math.sqrt(wpd*(wpd-1))
     
     
     Q = M*M.transpose()/numdocs
