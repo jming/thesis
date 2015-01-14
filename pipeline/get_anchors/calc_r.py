@@ -6,20 +6,25 @@ import scipy.io as sio
 
 filename = '../result8/'
 
-filenamea = filename+'result_out.100.A'
-A = np.loadtxt(filenamea)
+for N in ['20', '50', '100']:
 
-filenameq = filename+'cui_counter.mat.trunc.mat'
-Q = generate_Q_matrix(sio.loadmat(filenameq)['M'])
+	filenamea = filename+'result_out.'+N+'.A'
+	A = np.loadtxt(filenamea)
 
-print 'Q shape', Q.shape
-print Q
+	filenameq = filename+'cui_counter.mat.trunc.mat'
+	Q = generate_Q_matrix(sio.loadmat(filenameq)['M'])
 
-A_tall = np.linalg.pinv(A)
+	# filenameq = filename+'result_out.'+N+'.Q'
+	# Q = np.loadtxt(filenameq)
 
-print 'A_tall shape', A_tall.shape
-print A_tall
+	# print 'Q shape', Q.shape
+	# print Q
 
-R = A_tall.dot(Q).dot(A_tall.transpose())
+	A_tall = np.linalg.pinv(A)
 
-np.savetxt(filename+'result_out.100.R', R)
+	# print 'A_tall shape', A_tall.shape
+	# print A_tall
+
+	R = A_tall.dot(Q).dot(A_tall.transpose())
+
+	np.savetxt(filename+'result_out.'+N+'.R', R)
