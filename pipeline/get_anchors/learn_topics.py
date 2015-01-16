@@ -89,7 +89,7 @@ print "done recovering"
 np.savetxt(outfile+".A", A)
 np.savetxt(outfile+".topic_likelihoods", topic_likelihoods)
 np.savetxt(outfile+".R", R)
-np.savetxt(outfile+".Q", Q)
+# np.savetxt(outfile+".Q", Q)
 
 #display
 f = file(outfile+".topwords", 'w')

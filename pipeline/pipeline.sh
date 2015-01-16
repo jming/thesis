@@ -2,19 +2,19 @@
 
 echo 'start pipeline'
 
-N='8'
+N='10'
 
-# echo 'processing posts'
-# # python get_q/getq.py all_posts.txt chv.tsv cui_counter.mat cui_list.txt
-# # python get_q/getq.py get_q/test.txt get_q/chv_small.csv cui_counter.mat cui_list.txt
-# # python get_q/getq.py get_q/test.txt get_q/chv.tsv test_counter.mat test_list.txt
-# # python get_q/getq.py get_q/joy_all_posts.txt get_q/chv.tsv cui_counter.mat cui_list.txt
-# python get_q/getq.py get_q/joy_all_posts.txt get_q/mrsty_filtered.csv cui_counter.mat cui_list.txt
+echo 'processing posts'
+# python get_q/getq.py all_posts.txt chv.tsv cui_counter.mat cui_list.txt
+# python get_q/getq.py get_q/test.txt get_q/chv_small.csv cui_counter.mat cui_list.txt
+# python get_q/getq.py get_q/test.txt get_q/chv.tsv test_counter.mat test_list.txt
+# python get_q/getq.py get_q/joy_all_posts.txt get_q/chv.tsv cui_counter.mat cui_list.txt
+python get_q/getq.py get_q/joy_all_posts.txt get_q/mrsty_filtered.csv cui_counter.mat cui_list.txt
 
 
-# echo 'preprocessing, removing rare words and stop words'
-# # # python get_anchors/truncate_vocabulary.py test_counter.mat test_list.txt 50
-# python get_anchors/truncate_vocabulary.py cui_counter.mat cui_list.txt 1
+echo 'preprocessing, removing rare words and stop words'
+# # python get_anchors/truncate_vocabulary.py test_counter.mat test_list.txt 50
+python get_anchors/truncate_vocabulary.py cui_counter.mat cui_list.txt 1
 
 echo 'starting words recovery'
 for loss in L2
