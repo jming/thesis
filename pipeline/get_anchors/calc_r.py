@@ -4,7 +4,7 @@ import numpy as np
 
 import scipy.io as sio
 
-filename = '../result8/'
+filename = '../result10/'
 
 for N in ['20', '50', '100']:
 
