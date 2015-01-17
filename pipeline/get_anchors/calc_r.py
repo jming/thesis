@@ -4,7 +4,7 @@ import numpy as np
 
 import scipy.io as sio
 
-filename = '../result10/'
+filename = '../result11/'
 
 for N in ['20', '50', '100']:
 
@@ -27,4 +27,4 @@ for N in ['20', '50', '100']:
 
 	R = A_tall.dot(Q).dot(A_tall.transpose())
 
-	np.savetxt(filename+'result_out.'+N+'.R', R)
+	np.savetxt(filename+'result_out.'+N+'.R2', R)
