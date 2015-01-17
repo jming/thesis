@@ -122,6 +122,7 @@ def quadSolveExpGrad(y, x, eps, alpha=None, XX=None):
     c1 = 10**(-4)
     c2 = 0.75
     if XX == None:
+    # if not XX:
         print 'making XXT'
         XX = dot(x, x.transpose())
 
