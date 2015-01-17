@@ -118,7 +118,7 @@ def get_cui_counter(cui_trie, posts, cuis):
 		# get cuis from post
 		cuis = in_trie(cui_trie, post)
 		
-		if cuis:
+		if cuis and len(cuis) > 1:
 			for cui in cuis:
 				cui_int = int(cui[1:])
 
