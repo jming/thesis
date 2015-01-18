@@ -66,7 +66,7 @@ for i in xrange(M.indptr.size - 1):
         end = M.indptr[i + 1]
         
         # if number of distinct documents that this word appears in is >= cutoff
-        if (end - start) >= cutoff:
+        if (end - start) >= cutoff and np.sum(M.data[start:end]) > 1:
             new_indptr[indptr_counter] = new_indptr[indptr_counter-1] + end - start
             new_data[new_indptr[indptr_counter-1]:new_indptr[indptr_counter]] = M.data[start:end]
             new_indices[new_indptr[indptr_counter-1]:new_indptr[indptr_counter]] = M.indices[start:end]
