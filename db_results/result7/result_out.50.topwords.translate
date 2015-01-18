@@ -1,0 +1,600 @@
+Skin appearance normal
+; :; Allergy, unspecified
+; Skin appearance normal
+; pressure in eye
+; Palpation - action
+; pressure in eye
+; Refraction
+; Well adult
+; resection
+; hyperthermic
+; free text for social history
+; 
+Difficulty
+; :; minimal brain dysfunction
+; Difficulty
+; diet; deficiency
+; educational level
+; disturbance; learning
+; Visual function
+; Tactual Perception
+; Therapeutic touch each 15 minutes
+; rnrx speech therapist service
+; resection
+; 
+Physical Therapist Service
+; :; Physical Therapist Service
+; Rash and other nonspecific skin eruption
+; shortness of breath; breath
+; solid carcinoma of thyroid gland
+; prothrombin time (PT) test
+; Classical hydatidiform mole
+; surgical reconstruction procedure
+; radionuclide imaging/scanning
+; Unspecified Pain
+; urethral pressure profile (UPP) study
+; 
+Personal Medical History
+; :; Personal Medical History
+; Allergy, unspecified
+; Hypercortisolism
+; Gait disturbance
+; Rash and other nonspecific skin eruption
+; Stamina
+; Pigeon toe
+; solid carcinoma of thyroid gland
+; Unable to balance
+; lateral curvature of the spine developed after birth
+; 
+Complaint
+; :; Complaint
+; Allergy, unspecified
+; Sympt/complaint;heart
+; free text for social history
+; Mental state finding
+; Activities involving basketball
+; clostridial tetanus
+; Aphthous ulcer of mouth
+; Disorder of refraction
+; resection
+; 
+Health History
+; :; Health History
+; Pervasive developmental disorder, unspecified
+; Gait type
+; Rash and other nonspecific skin eruption
+; Weak
+; Labor
+; Asperger
+; female pregnancy
+; solid carcinoma of thyroid gland
+; aspirated
+; 
+Administration
+; :; Administration
+; ectopia; beats, atrial
+; Magnetic resonance imaging - action
+; Surgical
+; hyperthermic
+; epilepsy; fit
+; disturbance; learning
+; rnox dressings
+; redness of skin
+; stool passing
+; 
+Male structure
+; :; Male structure
+; delivery under medical care
+; Kanner
+; Pervasive developmental disorder, unspecified
+; Primigravida
+; examination of neurological system
+; GIFT
+; tic; de la Tourette
+; Gait type
+; Peripheral reflex
+; 
+Laboratory procedures -general
+; :; Laboratory procedures -general
+; epilepsy; fit
+; educational level
+; Blood count; hematocrit (Hct)
+; Full blood count
+; radionuclide imaging/scanning
+; neoplasm/cancer
+; Therapeutic touch each 15 minutes
+; Tactual Perception
+; Audiogram
+; 
+Date of birth of recipient of care
+; :; Date of birth of recipient of care
+; educational level
+; Accident;fall
+; delivery under medical care
+; Behavioral therapy
+; Drowsy
+; Kanner
+; Sleep functions, unspecified
+; Sensory perception
+; obstruction; lung, disease, chronic
+; 
+free text for family history
+; :; free text for family history
+; delivery under medical care
+; Pervasive developmental disorder, unspecified
+; Gait type
+; Kanner
+; Peripheral reflex
+; examination of neurological system
+; Classical hydatidiform mole
+; aspirated
+; tic; de la Tourette
+; 
+Disease or Disorder
+; :; Disease or Disorder
+; Presence
+; Blood count; hematocrit (Hct)
+; Middle insomnia
+; prothrombin time (PT) test
+; rndx injury risk
+; Risk For Impaired Thermoregulation
+; rndx skin integrity impairment risk
+; RISK FOR IMPAIRED PARENTING
+; Infection Risk
+; 
+Clinical finding
+; :; Clinical finding
+; Weak
+; resection
+; Surgical
+; Arthroscopic procedure
+; Rash and other nonspecific skin eruption
+; Dilatation
+; Neurosensory Disorder
+; Diagnostic arthroscopy of ankle joint
+; Thermal sensation, function
+; 
+malig neoplasm tnm staging primary tumor (t) t0
+; :; malig neoplasm tnm staging primary tumor (t) t0
+; Kanner
+; delivery under medical care
+; examination of neurological system
+; Pervasive developmental disorder, unspecified
+; Gait type
+; Presence
+; Unspecified Pain
+; body movement
+; Behavioral therapy
+; 
+Therapeutic proced
+; :; Therapeutic proced
+; Transferase; aspartate amino (AST) (SGOT)
+; Blood count; hematocrit (Hct)
+; Full blood count
+; Electrical tracings;neurolo
+; aspiration; syndrome of newborn, meconium
+; Unspecified Pain
+; Carbon dioxide (bicarbonate)
+; Murmur
+; Blood urea measurement
+; 
+Difficulty
+; :; minimal brain dysfunction
+; diet; deficiency
+; educational level
+; disturbance; learning
+; Visual function
+; Tactual Perception
+; Therapeutic touch each 15 minutes
+; rnrx speech therapist service
+; resection
+; C2 certainty
+; 
+Personal Medical History
+; :; Allergy, unspecified
+; Hypercortisolism
+; Gait disturbance
+; Rash and other nonspecific skin eruption
+; Stamina
+; Pigeon toe
+; solid carcinoma of thyroid gland
+; Unable to balance
+; lateral curvature of the spine developed after birth
+; Pervasive developmental disorder, unspecified
+; 
+Male structure
+; :; delivery under medical care
+; Kanner
+; Pervasive developmental disorder, unspecified
+; Primigravida
+; examination of neurological system
+; GIFT
+; tic; de la Tourette
+; Gait type
+; Peripheral reflex
+; Eye measure
+; 
+Complaint
+; :; Allergy, unspecified
+; Sympt/complaint;heart
+; free text for social history
+; Mental state finding
+; Activities involving basketball
+; clostridial tetanus
+; Aphthous ulcer of mouth
+; Disorder of refraction
+; resection
+; thyroiditis; lymphoid
+; 
+free text for family history
+; :; delivery under medical care
+; Pervasive developmental disorder, unspecified
+; Gait type
+; Kanner
+; Peripheral reflex
+; examination of neurological system
+; Classical hydatidiform mole
+; aspirated
+; tic; de la Tourette
+; Melanocytic nevi, unspecified
+; 
+Physical Therapist Service
+; :; Rash and other nonspecific skin eruption
+; shortness of breath; breath
+; solid carcinoma of thyroid gland
+; prothrombin time (PT) test
+; Classical hydatidiform mole
+; surgical reconstruction procedure
+; radionuclide imaging/scanning
+; Unspecified Pain
+; urethral pressure profile (UPP) study
+; Injection
+; 
+Administration
+; :; ectopia; beats, atrial
+; Magnetic resonance imaging - action
+; Surgical
+; hyperthermic
+; epilepsy; fit
+; disturbance; learning
+; rnox dressings
+; redness of skin
+; stool passing
+; prothrombin time (PT) test
+; 
+Date of birth of recipient of care
+; :; educational level
+; Accident;fall
+; delivery under medical care
+; Behavioral therapy
+; Drowsy
+; Kanner
+; Sleep functions, unspecified
+; Sensory perception
+; obstruction; lung, disease, chronic
+; Sign
+; 
+Clinical finding
+; :; Weak
+; resection
+; Surgical
+; Arthroscopic procedure
+; Rash and other nonspecific skin eruption
+; Dilatation
+; Neurosensory Disorder
+; Diagnostic arthroscopy of ankle joint
+; Tibialis anterior tendinitis
+; disease (or disorder); tendon, inflammatory
+; 
+malig neoplasm tnm staging primary tumor (t) t0
+; :; Kanner
+; delivery under medical care
+; examination of neurological system
+; Pervasive developmental disorder, unspecified
+; Gait type
+; Presence
+; Unspecified Pain
+; body movement
+; Behavioral therapy
+; Peripheral reflex
+; 
+Health History
+; :; Pervasive developmental disorder, unspecified
+; Gait type
+; Rash and other nonspecific skin eruption
+; Weak
+; Labor
+; Asperger
+; female pregnancy
+; solid carcinoma of thyroid gland
+; aspirated
+; Consciousness functions, unspecified
+; 
+Laboratory procedures -general
+; :; epilepsy; fit
+; educational level
+; Blood count; hematocrit (Hct)
+; Full blood count
+; radionuclide imaging/scanning
+; neoplasm/cancer
+; Therapeutic touch each 15 minutes
+; Tactual Perception
+; Audiogram
+; unconsciousness; attack
+; 
+Disease or Disorder
+; :; Presence
+; Blood count; hematocrit (Hct)
+; Middle insomnia
+; prothrombin time (PT) test
+; rndx injury risk
+; Risk For Impaired Thermoregulation
+; rndx skin integrity impairment risk
+; RISK FOR IMPAIRED PARENTING
+; Infection Risk
+; rndx fluid volume deficit risk
+; 
+Therapeutic proced
+; :; Transferase; aspartate amino (AST) (SGOT)
+; Blood count; hematocrit (Hct)
+; Full blood count
+; Electrical tracings;neurolo
+; aspiration; syndrome of newborn, meconium
+; Unspecified Pain
+; Carbon dioxide (bicarbonate)
+; Murmur
+; Blood urea measurement
+; Systemic blood pressure
+; 
+Difficulty
+; :; minimal brain dysfunction
+; diet; deficiency
+; educational level
+; disturbance; learning
+; Visual function
+; Tactual Perception
+; Therapeutic touch each 15 minutes
+; rnrx speech therapist service
+; resection
+; C2 certainty
+; 
+Personal Medical History
+; :; Allergy, unspecified
+; Hypercortisolism
+; Gait disturbance
+; Rash and other nonspecific skin eruption
+; Stamina
+; Pigeon toe
+; solid carcinoma of thyroid gland
+; Unable to balance
+; lateral curvature of the spine developed after birth
+; Pervasive developmental disorder, unspecified
+; 
+Complaint
+; :; Allergy, unspecified
+; Sympt/complaint;heart
+; free text for social history
+; Mental state finding
+; Activities involving basketball
+; clostridial tetanus
+; Aphthous ulcer of mouth
+; Disorder of refraction
+; resection
+; thyroiditis; lymphoid
+; 
+free text for family history
+; :; delivery under medical care
+; Pervasive developmental disorder, unspecified
+; Gait type
+; Kanner
+; Peripheral reflex
+; examination of neurological system
+; Classical hydatidiform mole
+; aspirated
+; tic; de la Tourette
+; Melanocytic nevi, unspecified
+; 
+Disease or Disorder
+; :; Presence
+; Blood count; hematocrit (Hct)
+; Middle insomnia
+; prothrombin time (PT) test
+; rndx injury risk
+; Risk For Impaired Thermoregulation
+; rndx skin integrity impairment risk
+; RISK FOR IMPAIRED PARENTING
+; Infection Risk
+; rndx fluid volume deficit risk
+; 
+Physical Therapist Service
+; :; Rash and other nonspecific skin eruption
+; shortness of breath; breath
+; solid carcinoma of thyroid gland
+; prothrombin time (PT) test
+; Classical hydatidiform mole
+; surgical reconstruction procedure
+; radionuclide imaging/scanning
+; Unspecified Pain
+; urethral pressure profile (UPP) study
+; Injection
+; 
+Date of birth of recipient of care
+; :; educational level
+; Accident;fall
+; delivery under medical care
+; Behavioral therapy
+; Drowsy
+; Kanner
+; Sleep functions, unspecified
+; Sensory perception
+; obstruction; lung, disease, chronic
+; Sign
+; 
+Laboratory procedures -general
+; :; epilepsy; fit
+; educational level
+; Blood count; hematocrit (Hct)
+; Full blood count
+; radionuclide imaging/scanning
+; neoplasm/cancer
+; Therapeutic touch each 15 minutes
+; Tactual Perception
+; Audiogram
+; unconsciousness; attack
+; 
+Administration
+; :; ectopia; beats, atrial
+; Magnetic resonance imaging - action
+; Surgical
+; hyperthermic
+; epilepsy; fit
+; disturbance; learning
+; rnox dressings
+; redness of skin
+; stool passing
+; prothrombin time (PT) test
+; 
+malig neoplasm tnm staging primary tumor (t) t0
+; :; Kanner
+; delivery under medical care
+; examination of neurological system
+; Pervasive developmental disorder, unspecified
+; Gait type
+; Presence
+; Unspecified Pain
+; body movement
+; Behavioral therapy
+; Peripheral reflex
+; 
+Clinical finding
+; :; Weak
+; resection
+; Surgical
+; Arthroscopic procedure
+; Rash and other nonspecific skin eruption
+; Dilatation
+; Neurosensory Disorder
+; Diagnostic arthroscopy of ankle joint
+; Tibialis anterior tendinitis
+; disease (or disorder); tendon, inflammatory
+; 
+Therapeutic proced
+; :; Transferase; aspartate amino (AST) (SGOT)
+; Blood count; hematocrit (Hct)
+; Full blood count
+; Electrical tracings;neurolo
+; aspiration; syndrome of newborn, meconium
+; Unspecified Pain
+; Carbon dioxide (bicarbonate)
+; Murmur
+; Blood urea measurement
+; Systemic blood pressure
+; 
+Male structure
+; :; delivery under medical care
+; Kanner
+; Pervasive developmental disorder, unspecified
+; Primigravida
+; examination of neurological system
+; GIFT
+; tic; de la Tourette
+; Gait type
+; Peripheral reflex
+; Eye measure
+; 
+Health History
+; :; Pervasive developmental disorder, unspecified
+; Gait type
+; Rash and other nonspecific skin eruption
+; Weak
+; Labor
+; Asperger
+; female pregnancy
+; solid carcinoma of thyroid gland
+; aspirated
+; Consciousness functions, unspecified
+; 
+Difficulty
+; :; minimal brain dysfunction
+; diet; deficiency
+; educational level
+; disturbance; learning
+; Visual function
+; Tactual Perception
+; Therapeutic touch each 15 minutes
+; rnrx speech therapist service
+; resection
+; C2 certainty
+; 
+Personal Medical History
+; :; Allergy, unspecified
+; Hypercortisolism
+; Gait disturbance
+; Rash and other nonspecific skin eruption
+; Stamina
+; Pigeon toe
+; solid carcinoma of thyroid gland
+; Unable to balance
+; lateral curvature of the spine developed after birth
+; Pervasive developmental disorder, unspecified
+; 
+free text for family history
+; :; delivery under medical care
+; Pervasive developmental disorder, unspecified
+; Gait type
+; Kanner
+; Peripheral reflex
+; examination of neurological system
+; Classical hydatidiform mole
+; aspirated
+; tic; de la Tourette
+; Melanocytic nevi, unspecified
+; 
+Disease or Disorder
+; :; Presence
+; Blood count; hematocrit (Hct)
+; Middle insomnia
+; prothrombin time (PT) test
+; rndx injury risk
+; Risk For Impaired Thermoregulation
+; rndx skin integrity impairment risk
+; RISK FOR IMPAIRED PARENTING
+; Infection Risk
+; rndx fluid volume deficit risk
+; 
+Clinical finding
+; :; Weak
+; resection
+; Surgical
+; Arthroscopic procedure
+; Rash and other nonspecific skin eruption
+; Dilatation
+; Neurosensory Disorder
+; Diagnostic arthroscopy of ankle joint
+; Tibialis anterior tendinitis
+; disease (or disorder); tendon, inflammatory
+; 
+malig neoplasm tnm staging primary tumor (t) t0
+; :; Kanner
+; delivery under medical care
+; examination of neurological system
+; Pervasive developmental disorder, unspecified
+; Gait type
+; Presence
+; Unspecified Pain
+; body movement
+; Behavioral therapy
+; Peripheral reflex
+; 
+Physical Therapist Service
+; :; Rash and other nonspecific skin eruption
+; shortness of breath; breath
+; solid carcinoma of thyroid gland
+; prothrombin time (PT) test
+; Classical hydatidiform mole
+; surgical reconstruction procedure
+; radionuclide imaging/scanning
+; Unspecified Pain
+; urethral pressure profile (UPP) study
+; Injection
+; 
