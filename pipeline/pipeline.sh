@@ -2,14 +2,14 @@
 
 echo 'start pipeline'
 
-N='14'
+N='16'
 
 echo 'processing posts'
 # python get_q/getq.py all_posts.txt chv.tsv cui_counter.mat cui_list.txt
 # python get_q/getq.py get_q/test.txt get_q/chv_small.csv cui_counter.mat cui_list.txt
 # python get_q/getq.py get_q/test.txt get_q/chv.tsv test_counter.mat test_list.txt
 # python get_q/getq.py get_q/joy_all_posts.txt get_q/chv.tsv cui_counter.mat cui_list.txt
-python get_q/getq.py get_q/joy_all_posts.txt get_q/mrsty_filtered_bdf.csv cui_counter.mat cui_list.txt
+python get_q/getq.py get_q/joy_all_posts.txt get_q/mrsty_filtered_bd.csv cui_counter.mat cui_list.txt
 
 
 echo 'preprocessing, removing rare words and stop words'
