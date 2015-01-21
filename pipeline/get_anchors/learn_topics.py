@@ -94,7 +94,11 @@ np.savetxt(outfile+".R", R)
 #display
 f = file(outfile+".topwords", 'w')
 for k in xrange(K):
-    topwords = np.argsort(A[:, k])[-params.top_words:][::-1]
+    mask = A[:, k] > 0.03
+    topwords = [ x for x in np.argsort(A[:, k]) if mask[x] ][::-1]
+    # topwords = np.argsort(A[:, k])[-params.top_words:][::-1]
+    # print params.top_words
+    # print 'npargsort', A[:, k]
     print vocab[anchors[k]], ':',
     print >>f, vocab[anchors[k]], ':',
     for w in topwords:
