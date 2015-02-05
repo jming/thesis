@@ -9,3 +9,5 @@ autism_vocab.txt
 *.csv
 *.mat
 *.txt
+pipeline/result_out.20.M
+pipeline/result_out.20.var
