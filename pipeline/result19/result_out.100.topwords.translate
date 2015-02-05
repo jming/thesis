@@ -1,0 +1,388 @@
+coding
+; :; sons
+; 
+aortic valve stenosis
+; :; aortic valve stenosis
+; 
+well in self (finding)
+; :; sons
+; hope
+; well in self (finding)
+; 
+oxygen concentrator (physical object)
+; :; sons
+; 
+whey protein
+; :; whey protein
+; proteins
+; 
+virgin (finding)
+; :; oils
+; coconut (food)
+; coconut oil
+; sons
+; milk
+; 
+ammonia level
+; :; 
+influenza virus vaccine
+; :; sons
+; 
+zinc picolinate
+; :; work
+; copper
+; zinc picolinate
+; vitamins
+; calcium
+; 
+health food
+; :; health food
+; diet
+; hypersensitivity
+; 
+activated charcoal
+; :; activated charcoal
+; 
+nasal spray (product)
+; :; nasal spray (product)
+; spray
+; sons
+; 
+peer review
+; :; sons
+; 
+feces examination nos (procedure)
+; :; sons
+; feces examination nos (procedure)
+; 
+black walnut hull extract
+; :; sons
+; feces
+; 
+lead increased
+; :; mercury
+; 
+colloidal silver
+; :; sons
+; colloidal silver
+; 
+cracked lips (finding)
+; :; 
+adrenal cortex
+; :; sons
+; 
+gastric emptying
+; :; gastric emptying
+; tic disorder
+; acids
+; 
+aloe vera preparation
+; :; sons
+; aloe vera preparation
+; 
+urine specimen (specimen)
+; :; metals
+; feces
+; urinalysis
+; 
+milk thistle extract
+; :; milk thistle extract
+; rice
+; 
+bruxism
+; :; 
+apple cider vinegar
+; :; sons
+; 
+magnesium citrate
+; :; capsule (pharmacologic)
+; sons
+; zinc
+; 
+grape seed
+; :; juice (substance)
+; grape seed
+; 
+leucovorin
+; :; leucovorin
+; 
+treatment options
+; :; sons
+; autistic disorder
+; child
+; 
+cold turkey
+; :; sons
+; 
+hearing tests
+; :; love
+; sons
+; hope
+; interested (finding)
+; work
+; 
+evening primrose oil
+; :; cod liver oil
+; fish oils
+; vitamins
+; evening primrose oil
+; coconut (food)
+; 
+school nurse (occupation)
+; :; 
+copper level
+; :; zinc
+; 
+electronystagmography
+; :; sons
+; 
+lemon juice (substance)
+; :; sons
+; water
+; taste
+; drinks (substance)
+; 
+cut of back (disorder)
+; :; sons
+; 
+chlorine dioxide
+; :; sons
+; 
+cover-up
+; :; prescriptions
+; cover-up
+; 
+work up
+; :; sons
+; work up
+; offspring
+; magnesium
+; hope
+; 
+personal experience
+; :; sharing
+; 
+magnesium sulfate heptahydrate
+; :; magnesium sulfate heptahydrate
+; bathing
+; salts
+; 
+phlebotomy
+; :; blood tests
+; work
+; 
+calcium citrate
+; :; magnesium
+; 
+iron measurement
+; :; 
+urinary tract
+; :; sons
+; 
+weight gain
+; :; child
+; magnesium
+; 
+hay fever
+; :; food
+; hay fever
+; food hypersensitivity
+; 
+challenge tests
+; :; urine
+; 
+levocarnitine
+; :; sons
+; 
+grapefruit seed
+; :; grapefruit seed
+; 
+stem cells
+; :; 
+special diet
+; :; cystic fibrosis
+; sons
+; food
+; 
+water,distilled
+; :; sons
+; juice (substance)
+; 
+family members
+; :; sons
+; 
+epilepsy, absence
+; :; child
+; 
+protein powder
+; :; sons
+; milk
+; capsule (pharmacologic)
+; 
+speech and language
+; :; sons
+; therapeutic procedure
+; 
+nervous system diseases
+; :; sons
+; autistic disorder
+; reading
+; 
+middle insomnia (disorder)
+; :; sleep
+; sons
+; wake ups
+; 
+mercury poisoning
+; :; lead
+; metals
+; 
+corn syrup
+; :; sons
+; 
+vitamin B complex
+; :; vitamin A
+; minerals
+; ascorbic acid
+; sons
+; vitamin D
+; 
+lonidamine
+; :; tic disorder
+; food
+; sons
+; diet
+; digestive enzymes
+; 
+problem behavior (finding)
+; :; sons
+; 
+peanut butter (substance)
+; :; sons
+; 
+head tilt (finding)
+; :; work
+; 
+folic acid deficiency
+; :; sons
+; child
+; 
+bright red color (finding)
+; :; 
+grapefruit (food)
+; :; grapefruit (food)
+; 
+liver function tests
+; :; work
+; 
+pediatric neurologist (occupation)
+; :; diagnosis
+; seizures
+; physicians
+; 
+bad taste
+; :; juice (substance)
+; work
+; 
+evening primrose extract
+; :; cod liver oil
+; vitamins
+; fish oils
+; work
+; 
+pectin, citrus
+; :; sons
+; 
+egg white
+; :; sons
+; 
+zinc sulfate
+; :; magnesium
+; sons
+; copper
+; calcium
+; 
+stool specimen (specimen)
+; :; sons
+; [d] stools loose (context-dependent category)
+; 
+infant food
+; :; sons
+; 
+pregnant women
+; :; sons
+; child
+; 
+learning difficulties (finding)
+; :; child
+; sons
+; 
+feeling stressed (finding)
+; :; 
+olive oil
+; :; sons
+; olive oil
+; 
+claw
+; :; 
+low grade pyrexia (finding)
+; :; work
+; 
+ice cream
+; :; sons
+; 
+magnetism
+; :; sons
+; 
+oral contraception
+; :; sons
+; magnesium
+; 
+language ability
+; :; 
+grape seed extract
+; :; sons
+; grape seed extract
+; grapes
+; work
+; 
+encephalitis
+; :; 
+glean
+; :; sons
+; 
+sleep disturbances
+; :; sons
+; waking (qualifier value)
+; melatonin
+; back
+; 
+tea tree oil
+; :; sons
+; cod liver oil
+; fish oils
+; 
+streptococcal infections
+; :; 
+child in need (finding)
+; :; sons
+; autistic disorder
+; 
+mood swings
+; :; sons
+; 
+blinking
+; :; eye contact
+; 
+lysis (morphologic abnormality)
+; :; sons
+; muscle strain
+; enzymes
+; killing
+; cesium
+; 
+borage oil
+; :; fish oils
+; cod liver oil
+; work
+; 

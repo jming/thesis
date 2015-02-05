@@ -17,7 +17,7 @@ _end = '_end_'
 
 ######################################
 
-def get_cui_trie(filename):
+def get_cui_trie(filename, stopwords):
 
 	# load_chv
 	# column_names = ['cui', 'term', 'chv_pref_name']
@@ -25,8 +25,11 @@ def get_cui_trie(filename):
 	# cui_df = pd.read_csv(filename, names=column_names, usecols=[0,1,2])
 	cui_df = pd.read_csv(filename)
 
+	stopwords_list = get_stopwords_list(stopwords)
+	# print stopwords_list
+
 	# build trie
-	cui_trie = make_trie(cui_df)
+	cui_trie = make_trie(cui_df, stopwords_list)
 
 	# get cui list
 	cui_list = [' ' for x in range(MAX_CUI+1)]
@@ -41,16 +44,25 @@ def get_cui_trie(filename):
 			cui_list[idx] = name
 	# cuis_list0 = list(set(sorted(cui_df['cui'])))
 
-
 	return (cui_list, cui_trie, cui_dict)
 
-def make_trie(df):
+def get_stopwords_list(f):
+
+	print 'getting stopwords list'
+
+	with open(f, "r") as fi:
+		return [r[:-1] for r in fi]
+
+def make_trie(df, stopwords_list):
 
 	root = {}
 	for i,row in df.iterrows():
 		current_dict =root
-		if type(row['term']) is str:
-			for letter in row['term']:
+		term = row['term']
+		# print term
+		if type(term) is str and term not in stopwords_list:
+			# print 'in!'
+			for letter in term:
 				current_dict = current_dict.setdefault(letter, {})
 		current_dict = current_dict.setdefault(_end, row['cui'])
 	return root
@@ -167,8 +179,10 @@ if __name__ == '__main__':
 		matrix_outfile = sys.argv[3]
 		cui_outfile = sys.argv[4]
 
+		stopwords = sys.argv[5]
+
 	else:
-		print 'usage ./getq.py post_infile cui_infile matrix_outfile cui_outfile'
+		print 'usage ./getq.py post_infile cui_infile matrix_outfile cui_outfile stopwords'
 		sys.exit()
 
 	# get posts
@@ -178,7 +192,7 @@ if __name__ == '__main__':
 
 	# get chv trie
 	print 'getting cui trie', time.time()
-	cuis_list, cui_trie, cui_dict = get_cui_trie(cui_infile)
+	cuis_list, cui_trie, cui_dict = get_cui_trie(cui_infile, stopwords)
 	print 'number of cuis', len(cuis_list)
 
 	print 'writing cuis list', time.time()
