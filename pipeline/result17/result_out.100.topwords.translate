@@ -1,0 +1,752 @@
+challenge tests
+; :; challenge tests
+; autistic disorder
+; precipitating factors
+; simian acquired immunodeficiency syndrome
+; 
+cracked lips (finding)
+; :; cracked lips (finding)
+; exanthema
+; infection
+; 
+problem behavior (finding)
+; :; butting (finding)
+; kaposi sarcoma
+; obsessive-compulsive disorder
+; aggression
+; behavioral change
+; 
+treatment protocols
+; :; autistic disorder
+; treated with (attribute)
+; speech therapy
+; chronic fatigue syndrome
+; homeopathic therapy
+; 
+cold turkey
+; :; cold turkey
+; influenza
+; herpes labialis
+; cold symptoms
+; coughing
+; snuffles (finding)
+; butting (finding)
+; catch (finding)
+; pharyngitis
+; 
+diaper rash
+; :; aortic valve stenosis
+; kaposi sarcoma
+; pruritus
+; diaper rash
+; behavior
+; eczema
+; autistic disorder
+; tonsillectomy and adenoidectomy (procedure)
+; 
+streptococcal infections
+; :; butting (finding)
+; infection of ear (disorder)
+; fighting (finding)
+; streptococcal infections
+; 
+lyme disease
+; :; autistic disorder
+; therapeutic procedure
+; lyme disease
+; mitochondrial diseases
+; communication
+; attack
+; 
+epilepsy, absence
+; :; electroencephalography
+; epilepsy
+; epilepsy, absence
+; scanning
+; 
+[d]failure to gain weight (context-dependent category)
+; :; butting (finding)
+; [d]failure to gain weight (context-dependent category)
+; agreement
+; hepatitis, infectious canine
+; 
+stomach pain
+; :; gastrointestinal gas
+; stomach pain
+; screaming (finding)
+; infection
+; 
+chap
+; :; chap
+; exanthema
+; mydriasis
+; pain
+; 
+autistic children
+; :; therapeutic procedure
+; scientific study
+; autistic children
+; disease
+; 
+influenza-like symptoms (finding)
+; :; butting (finding)
+; common cold
+; influenza-like symptoms (finding)
+; infectious gastroenteritis (disorder)
+; vaccination
+; demand (clinical)
+; 
+early intervention (education)
+; :; therapeutic procedure
+; electroconvulsive therapy
+; kaposi sarcoma
+; early intervention (education)
+; tonsillectomy and adenoidectomy (procedure)
+; autistic disorder
+; test of visual evoked responses in children
+; 
+upset stomach (finding)
+; :; upset stomach (finding)
+; crying
+; pain
+; screaming (finding)
+; headache
+; nausea
+; vomiting
+; 
+peripheral nervous system diseases
+; :; butting (finding)
+; peripheral nervous system diseases
+; 
+sudden infant death syndrome
+; :; sudden infant death syndrome
+; autistic disorder
+; disease
+; discussion (procedure)
+; attack
+; 
+reminding (procedure)
+; :; aortic valve stenosis
+; simian acquired immunodeficiency syndrome
+; kaposi sarcoma
+; autistic disorder
+; 
+disabled children
+; :; disabled children
+; assessment procedure (procedure)
+; scientific study
+; knowledge acquisition
+; treated with (attribute)
+; 
+fetal alcohol syndrome
+; :; butting (finding)
+; aortic valve stenosis
+; chronic fatigue syndrome
+; sharing
+; 
+mumps
+; :; butting (finding)
+; mumps
+; 
+gonorrhea
+; :; kaposi sarcoma
+; gambling
+; gonorrhea
+; tonsillectomy and adenoidectomy (procedure)
+; telling untruths
+; bullying (finding)
+; defend
+; attention deficit disorder with hyperactivity
+; electroconvulsive therapy
+; polyendocrinopathies, autoimmune
+; 
+pelvic inflammatory disease
+; :; chronic fatigue syndrome
+; kaposi sarcoma
+; simian acquired immunodeficiency syndrome
+; tic disorder
+; recommending
+; electroconvulsive therapy
+; autistic disorder
+; 
+contraception
+; :; contraception
+; infection
+; cisplatin/ifosfamide/mesna/mitomycin
+; herpes zoster
+; decompression sickness
+; disease
+; slitting (procedure)
+; 
+learning disabilities
+; :; behavior
+; disease
+; skills
+; fighting (finding)
+; electroconvulsive therapy
+; educational process of instructing
+; learning disabilities
+; treated with (attribute)
+; learning disorders
+; reporting
+; 
+social skills
+; :; social skills
+; communication
+; educational process of instructing
+; knowledge acquisition
+; apraxias
+; electroconvulsive therapy
+; 
+criticism
+; :; butting (finding)
+; chronic fatigue syndrome
+; kaposi sarcoma
+; 
+duodenal ulcer
+; :; chronic fatigue syndrome
+; aortic valve stenosis
+; kaposi sarcoma
+; simian acquired immunodeficiency syndrome
+; buying
+; killing
+; 
+peer review
+; :; autistic disorder
+; reporting
+; patients
+; agreement
+; blind vision
+; 
+sick child (context-dependent category)
+; :; kaposi sarcoma
+; autistic disorder
+; advice (regime/therapy)
+; sicca syndrome
+; simian acquired immunodeficiency syndrome
+; pulmonary embolism
+; 
+challenge
+; :; challenge
+; sicca syndrome
+; tonsillectomy and adenoidectomy (procedure)
+; 
+whining, function (observable entity)
+; :; aortic valve stenosis
+; screaming (finding)
+; simian acquired immunodeficiency syndrome
+; pain
+; behavior
+; feeling upset (finding)
+; autistic disorder
+; whining, function (observable entity)
+; 
+communicable diseases
+; :; butting (finding)
+; 
+omnibus personality inventory
+; :; aortic valve stenosis
+; omnibus personality inventory
+; autistic disorder
+; disease
+; kaposi sarcoma
+; attack
+; 
+hallucinations
+; :; butting (finding)
+; 
+paresis
+; :; paresis
+; infection
+; disease
+; thiamine deficiency
+; skills
+; attack
+; fatigue
+; 
+hepatitis
+; :; hepatitis
+; skills
+; role
+; precipitating factors
+; mental suffering
+; personal failure
+; 
+fluctuation (finding)
+; :; butting (finding)
+; chronic fatigue syndrome
+; 
+cradle cap (disorder)
+; :; exanthema
+; behavior
+; cradle cap (disorder)
+; infection
+; therapeutic procedure
+; pain
+; pruritus
+; treated with (attribute)
+; 
+heartburn
+; :; diarrhea
+; behavior
+; heartburn
+; nausea
+; temper tantrum (finding)
+; coughing
+; pain
+; killing
+; lethargy
+; 
+syphilis
+; :; butting (finding)
+; autistic disorder
+; therapeutic procedure
+; 
+plague
+; :; aortic valve stenosis
+; tic disorder
+; chronic fatigue syndrome
+; autistic disorder
+; sicca syndrome
+; 
+sedation procedure
+; :; aortic valve stenosis
+; electroencephalography
+; 
+manic
+; :; chronic fatigue syndrome
+; behavior
+; crying
+; sicca syndrome
+; exanthema
+; therapeutic procedure
+; seizures
+; 
+tetanus
+; :; chronic fatigue syndrome
+; subacute bacterial endocarditis
+; reporting
+; test of visual evoked responses in children
+; blood tests
+; injections
+; 
+pica disease
+; :; aortic valve stenosis
+; chronic fatigue syndrome
+; kaposi sarcoma
+; simian acquired immunodeficiency syndrome
+; 
+medication administration: epidural (procedure)
+; :; therapeutic procedure
+; behavior
+; medication administration: epidural (procedure)
+; infection
+; fighting (finding)
+; treated with (attribute)
+; precipitating factors
+; ultrasonography
+; 
+retention
+; :; butting (finding)
+; 
+myocardial infarction
+; :; butting (finding)
+; 
+nasal congestion (finding)
+; :; chronic fatigue syndrome
+; simian acquired immunodeficiency syndrome
+; tic disorder
+; 
+colonoscopy
+; :; colonoscopy
+; behavior
+; constipation
+; procedures
+; infection
+; vomiting
+; biopsy
+; pain
+; obsessive-compulsive disorder
+; complementary and alternative medicine
+; 
+acquired immunodeficiency syndrome
+; :; therapeutic procedure
+; disease
+; infection
+; acquired immunodeficiency syndrome
+; 
+magnetic resonance imaging
+; :; seizures
+; magnetic resonance imaging
+; epilepsy
+; disease
+; 
+blushing
+; :; chronic fatigue syndrome
+; kaposi sarcoma
+; tic disorder
+; 
+cancer remission
+; :; aortic valve stenosis
+; chronic fatigue syndrome
+; 
+hypocupremia (disorder)
+; :; hypocupremia (disorder)
+; infection
+; disease
+; blood count, complete
+; diabetes mellitus
+; malabsorption syndromes
+; 
+anesthesia procedures
+; :; aortic valve stenosis
+; chronic fatigue syndrome
+; 
+unspecified encephalopathy (disorder)
+; :; butting (finding)
+; autistic disorder
+; 
+spasm
+; :; disease
+; autistic disorder
+; electroconvulsive therapy
+; pulmonary embolism
+; behavior
+; spasm
+; 
+meningitis
+; :; infection
+; meningitis
+; disease
+; influenza
+; pain
+; malignant neoplasms
+; precipitating factors
+; attack
+; role
+; 
+obesity
+; :; disease
+; obesity
+; providing presence (regime/therapy)
+; malignant neoplasms
+; assessment procedure (procedure)
+; pharmaceuticals
+; diabetes mellitus, insulin-dependent
+; 
+rubella
+; :; rubella
+; autistic disorder
+; disease
+; vaccination
+; booster
+; herpes nos
+; 
+rheumatoid arthritis
+; :; pain
+; rheumatoid arthritis
+; carcinoma of unknown primary
+; disease
+; telling untruths
+; coughing
+; bullying (finding)
+; soak (procedure)
+; 
+colitis, ulcerative
+; :; colitis, ulcerative
+; behavior
+; pain
+; treated with (attribute)
+; killing
+; infection
+; procedures
+; fighting (finding)
+; 
+stress disorders, post-traumatic
+; :; kaposi sarcoma
+; autistic disorder
+; tic disorder
+; aortic valve stenosis
+; sicca syndrome
+; tonsillectomy and adenoidectomy (procedure)
+; 
+amyotrophic lateral sclerosis
+; :; kaposi sarcoma
+; infection
+; amyotrophic lateral sclerosis
+; muscle rigidity
+; precipitating factors
+; ichthyosis, x-linked
+; 
+ache
+; :; feeling upset (finding)
+; ache
+; pain
+; sensory discomfort
+; vomiting
+; 
+abdominal colic
+; :; killing
+; therapeutic procedure
+; infection
+; eczema
+; butting (finding)
+; abdominal colic
+; 
+discipline
+; :; simian acquired immunodeficiency syndrome
+; kaposi sarcoma
+; crying
+; epilepsy, temporal lobe
+; behavior
+; tonsillectomy and adenoidectomy (procedure)
+; 
+plain film (procedure)
+; :; tonsillectomy and adenoidectomy (procedure)
+; autistic disorder
+; diarrhea
+; therapeutic procedure
+; test of visual evoked responses in children
+; citrate measurement
+; advice (regime/therapy)
+; plain film (procedure)
+; 
+eructation
+; :; autistic disorder
+; therapeutic procedure
+; pain
+; eructation
+; scientific study
+; soak (procedure)
+; 
+avitaminosis
+; :; avitaminosis
+; disease
+; attack
+; behavior
+; dietary supplementation
+; hepatitis, infectious canine
+; body weight
+; gambling
+; 
+estrogen replacement therapy
+; :; therapeutic procedure
+; autistic disorder
+; success
+; estrogen replacement therapy
+; electroconvulsive therapy
+; infection
+; 
+oral contraception
+; :; kaposi sarcoma
+; tic disorder
+; tonsillectomy and adenoidectomy (procedure)
+; sicca syndrome
+; buying
+; 
+electronystagmography
+; :; therapeutic procedure
+; electronystagmography
+; disease
+; hepatitis, infectious canine
+; electroencephalography
+; role
+; body weight
+; 
+poliomyelitis
+; :; influenza
+; poliomyelitis
+; measles
+; immunization
+; precipitating factors
+; scan brain
+; x-ray computed tomography
+; exposure to (contextual qualifier) (qualifier value)
+; scientific study
+; vaccination
+; 
+counseling
+; :; counseling
+; disease
+; reporting
+; precipitating factors
+; syndrome
+; knowledge acquisition
+; electroconvulsive therapy
+; treated with (attribute)
+; behavior
+; infection
+; skills
+; therapeutic procedure
+; 
+cysts
+; :; tic disorder
+; treated with (attribute)
+; cysts
+; gambling
+; autistic disorder
+; behavior
+; cervical intraepithelial neoplasia
+; disease
+; 
+neuropathy (disorder)
+; :; neuropathy (disorder)
+; autistic disorder
+; dietary supplementation
+; scientific study
+; mental suffering
+; 
+chickenpox
+; :; chickenpox
+; exanthema
+; infection
+; eczema
+; syndrome
+; 
+muscle cramp
+; :; muscle cramp
+; infection
+; pain
+; irritable bowel syndrome
+; 
+head banging
+; :; behavior
+; crying
+; head banging
+; calming (procedure)
+; violent
+; pain
+; aggression
+; obsessive-compulsive disorder
+; 
+homeschooling
+; :; simian acquired immunodeficiency syndrome
+; sharing
+; tonsillectomy and adenoidectomy (procedure)
+; buying
+; advice (regime/therapy)
+; recommending
+; autistic disorder
+; subacute bacterial endocarditis
+; 
+streptococcal sore throat nos (disorder)
+; :; killing
+; infection
+; streptococcal sore throat nos (disorder)
+; eczema
+; 
+charmed
+; :; aortic valve stenosis
+; kaposi sarcoma
+; recommending
+; therapeutic procedure
+; 
+stuttering
+; :; autistic disorder
+; behavior
+; therapeutic procedure
+; tic disorder
+; recommending
+; test of visual evoked responses in children
+; 
+retinitis pigmentosa
+; :; kaposi sarcoma
+; autistic disorder
+; therapeutic procedure
+; tic disorder
+; recommending
+; 
+endoscopy
+; :; chronic fatigue syndrome
+; simian acquired immunodeficiency syndrome
+; behavior
+; sharing
+; recommending
+; electroconvulsive therapy
+; 
+anorexia
+; :; anorexia
+; pain
+; tired (finding)
+; disease
+; mental depression
+; fatigue
+; lethargy
+; 
+overweight (bmi<30)
+; :; kaposi sarcoma
+; recommending
+; therapeutic procedure
+; overweight (bmi<30)
+; pulmonary embolism
+; electroconvulsive therapy
+; scientific study
+; 
+stalking
+; :; aortic valve stenosis
+; chronic fatigue syndrome
+; simian acquired immunodeficiency syndrome
+; communication
+; attack
+; 
+occupational therapy nos (regime/therapy)
+; :; aortic valve stenosis
+; treated with (attribute)
+; killing
+; occupational therapy nos (regime/therapy)
+; skills
+; 
+iron deficiency (disorder)
+; :; aortic valve stenosis
+; 
+night terrors
+; :; chronic fatigue syndrome
+; aortic valve stenosis
+; simian acquired immunodeficiency syndrome
+; tic disorder
+; kaposi sarcoma
+; 
+riboflavin assay
+; :; chronic fatigue syndrome
+; autistic disorder
+; tic disorder
+; simian acquired immunodeficiency syndrome
+; therapeutic procedure
+; pulmonary embolism
+; 
+pneumonia
+; :; infection
+; pain
+; pneumonia
+; treated with (attribute)
+; disease
+; fighting (finding)
+; influenza
+; 
+disabled persons
+; :; simian acquired immunodeficiency syndrome
+; pulmonary embolism
+; scientific study
+; therapeutic procedure
+; electroconvulsive therapy
+; reporting
+; disabled persons
+; seizures
+; 
+general anesthesia
+; :; simian acquired immunodeficiency syndrome
+; kaposi sarcoma
+; recommending
+; tic disorder
+; autistic disorder
+; electroconvulsive therapy
+; pulmonary embolism
+; 
+anemia
+; :; autistic disorder
+; anemia
+; disease
+; infection
+; pain
+; zinc deficiency (disorder)
+; 

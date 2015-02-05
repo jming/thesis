@@ -20,9 +20,13 @@ def findAnchors(Q, K, params, candidates):
         Q[i, :] = Q[i, :]/float(row_sums[i])    
 
     # Reduced dimension random projection method for recovering anchor words
-    Q_red = rp.Random_Projection(Q.T, new_dim, prng_W)
-    Q_red = Q_red.T
-    (anchors, anchor_indices) = gs.Projection_Find(Q_red, K, candidates)
+    # Q_red = rp.Random_Projection(Q.T, new_dim, prng_W)
+    # Q_red = Q_red.T
+
+    # np.savetxt("result_out.20.Q", Q)
+
+    # (anchors, anchor_indices) = gs.Projection_Find(Q_red, K, candidates)
+    (anchors, anchor_indices) = gs.Projection_Find(Q, K, candidates)
 
     # restore the original Q
     for i in xrange(len(Q[:, 0])):
