@@ -24,7 +24,6 @@ def get_cui_trie(filename, stopwords):
 	# cui_df = pd.read_csv(filename, sep='\t', names=column_names, usecols=[0,1,2])
 	# cui_df = pd.read_csv(filename, names=column_names, usecols=[0,1,2])
 	cui_df = pd.read_csv(filename)
-
 	stopwords_list = get_stopwords_list(stopwords)
 	# print stopwords_list
 

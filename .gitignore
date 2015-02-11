@@ -11,3 +11,6 @@ autism_vocab.txt
 *.txt
 pipeline/result_out.20.M
 pipeline/result_out.20.var
+*.M
+*.var
+.DS_Store
