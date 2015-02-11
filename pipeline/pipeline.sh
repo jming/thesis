@@ -38,5 +38,4 @@ do
 	echo 'translating $K'
 	# python get_result/translate.py result$N/result\_out.$K.topwords result$N/result\_out.$K.topwords.translate cui_dict.txt
 	python get_result/translate.py result\_out.$K.topwords result\_out.$K.topwords.translate cui_dict.txt
-
 done
