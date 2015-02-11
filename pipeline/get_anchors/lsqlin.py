@@ -211,24 +211,23 @@ if __name__ == '__main__':
 
     pass
 
-    basis = np.array([[0.8, 0.1, 0.1], [0.1, 0.8, 0.1], [0.1, 0.1, 0.8]])
+    # basis = np.array([[0.8, 0.1, 0.1], [0.1, 0.8, 0.1], [0.1, 0.1, 0.8]])
     # point = np.array([0.9, 0.05, 0.05])
-    point = np.array([0.3, 0.3, 0.4])
 
-    m = basis[:,0].size
-    n = basis[0,:].size
+    # m = basis[:,0].size
+    # n = basis[0,:].size
     
-    C = np.array(basis)
-    d = np.array(point)
-    A = None
-    b = None
+    # C = np.array(basis)
+    # d = np.array(point)
+    # A = None
+    # b = None
 
-    Aeq = np.ones((1, n))
-    beq = np.ones(1)
-    lb = np.zeros((n, 1))
-    ub = np.zeros((n, 1))
+    # Aeq = np.ones((1, n))
+    # beq = np.ones(1)
+    # lb = np.zeros((n, 1))
+    # ub = np.zeros((n, 1))
 
-    print lsqlin(C, d, A=A, b=b, Aeq=Aeq, beq=beq, lb=lb, ub=ub)
+    # print lsqlin(C, d, A=A, b=b, Aeq=Aeq, beq=beq, lb=lb, ub=ub)
 
     # B1 = np.array([[0.8, 0.1, 0.1], [0.1, 0.8, 0.1], [0.1, 0.1, 0.8]])
     # C = B1
