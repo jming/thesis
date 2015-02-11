@@ -1,0 +1,240 @@
+C2 certainty
+; :; C2 certainty
+; training level
+; Allergy/allergic reaction nos
+; diet; deficiency
+; disturbance; learning
+; Physical medicine procedure
+; hyperactivity; child
+; complete blood count (CBC)
+; Atrial Premature Complex (APC)
+; treatment method
+; 
+C1 certainty
+; :; C1 certainty
+; training level
+; Allergy/allergic reaction nos
+; diet; deficiency
+; disturbance; learning
+; Physical medicine procedure
+; complete blood count (CBC)
+; infection; Bordetella pertussis
+; Atrial Premature Complex (APC)
+; Hematocrit Measurement
+; 
+Hemoglobin fractionation and quantitation; electrophoresis (eg, A2, S, C, and/or
+; :; Hemoglobin fractionation and quantitation; electrophoresis (eg, A2, S, C, and/or
+; Personal Medical History
+; aspiration; syndrome of newborn, meconium
+; T0 Stage Finding
+; Allergy/allergic reaction nos
+; Overlying behavior
+; Finding
+; rndx unspecified pain
+; McCune-Albright
+; Physical medicine procedure
+; 
+Normal micturition
+; :; training level
+; Allergy/allergic reaction nos
+; vesicoureteral; regurgitation
+; diet; deficiency
+; hyperactivity; child
+; Physical medicine procedure
+; treatment method
+; disturbance; learning
+; Family history with explicit context
+; T0 Stage Finding
+; 
+s-phase fraction (SPF)
+; :; disturbance; learning
+; Karyotype determination
+; training level
+; Allergy/allergic reaction nos
+; Disease or Disorder
+; Family history with explicit context
+; hyperactivity; child
+; Finding
+; treatment method
+; Laboratory procedures -general
+; 
+Effusion of joint
+; :; training level
+; Allergy/allergic reaction nos
+; malig neoplasm tnm stage regional lymph node (n) n0
+; diet; deficiency
+; hyperactivity; child
+; Physical medicine procedure
+; treatment method
+; disturbance; learning
+; T0 Stage Finding
+; Family history with explicit context
+; 
+Cardiac MRI
+; :; T2 Stage Finding
+; Finding
+; Unlisted ultrasound procedure (eg, diagnostic, interventional)
+; Barrett
+; Personal Medical History
+; CT of head
+; Cardiac MRI
+; Chronic constipation
+; Soft tissue swelling
+; malig neoplasm tnm stage regional lymph node (n) n0
+; 
+Normal intraocular pressure
+; :; disturbance; learning
+; T0 Stage Finding
+; Chief complaint
+; Personal Medical History
+; Karyotype determination
+; Speech deficit communication enhancement each 15 minutes
+; training level
+; Family history with explicit context
+; aspiration; syndrome of newborn, meconium
+; Hearing examination, not otherwise specified
+; 
+Inflammatory disorder
+; :; training level
+; Allergy/allergic reaction nos
+; diet; deficiency
+; Physical medicine procedure
+; hyperactivity; child
+; disturbance; learning
+; treatment method
+; complete blood count (CBC)
+; Hematocrit Measurement
+; Family history with explicit context
+; 
+compression therapy
+; :; training level
+; Allergy/allergic reaction nos
+; hyperactivity; child
+; diet; deficiency
+; T0 Stage Finding
+; Family history with explicit context
+; treatment method
+; Physical medicine procedure
+; Personal Medical History
+; Chief complaint
+; 
+calculus; nephritic
+; :; Personal Medical History
+; T0 Stage Finding
+; training level
+; Finding
+; Chief complaint
+; hyperactivity; child
+; Family history with explicit context
+; treatment method
+; disturbance; learning
+; morbus; caducus
+; 
+surgical cutting of the bone
+; :; training level
+; Allergy/allergic reaction nos
+; T0 Stage Finding
+; Chief complaint
+; Autistic disorder of childhood onset
+; treatment method
+; hyperactivity; child
+; Family history with explicit context
+; diet; deficiency
+; Personal Medical History
+; 
+Hodgkin's sarcoma (clinical)
+; :; training level
+; Allergy/allergic reaction nos
+; hyperactivity; child
+; diet; deficiency
+; T0 Stage Finding
+; Family history with explicit context
+; treatment method
+; Hearing examination, not otherwise specified
+; disturbance; learning
+; Physical medicine procedure
+; 
+Spinal fusion, not otherwise specified
+; :; T2 Stage Finding
+; malig neoplasm tnm staging primary tumor (t) t1
+; Finding
+; infection; Bordetella pertussis
+; Magnetic resonance imaging - action
+; Atrial Premature Complex (APC)
+; disturbance; learning
+; T3 Stage Finding
+; Surgical procedure
+; Hematocrit Measurement
+; 
+Stimulation - action
+; :; hyperactivity; child
+; training level
+; Stimulation - action
+; Allergy/allergic reaction nos
+; T0 Stage Finding
+; diet; deficiency
+; Family history with explicit context
+; treatment method
+; disturbance; learning
+; aspiration; syndrome of newborn, meconium
+; 
+tarsitis
+; :; Allergy/allergic reaction nos
+; T0 Stage Finding
+; training level
+; Family history with explicit context
+; Personal Medical History
+; treatment method
+; hyperactivity; child
+; Chief complaint
+; Physical medicine procedure
+; Disease or Disorder
+; 
+Acute inflammation
+; :; aspiration; syndrome of newborn, meconium
+; Allergy/allergic reaction nos
+; T0 Stage Finding
+; training level
+; McCune-Albright
+; rndx unspecified pain
+; hyperactivity; child
+; treatment method
+; Family history with explicit context
+; diet; deficiency
+; 
+N1 Stage Finding
+; :; T0 Stage Finding
+; morbus; caducus
+; Chief complaint
+; Personal Medical History
+; Electroencephalogram
+; treatment method
+; Allergy/allergic reaction nos
+; training level
+; Autistic disorder of childhood onset
+; Family history with explicit context
+; 
+Examination of cells
+; :; Karyotype determination
+; Laboratory procedures -general
+; Examination of cells
+; Skin appearance normal
+; Disease or Disorder
+; Male structure
+; T0 Stage Finding
+; Presence
+; disturbance; learning
+; Analysis
+; 
+Psychotic symptom
+; :; hyperactivity; child
+; training level
+; Allergy/allergic reaction nos
+; Personal Medical History
+; T0 Stage Finding
+; malig neoplasm tnm staging primary tumor (t) t1
+; disturbance; learning
+; Finding
+; Family history with explicit context
+; treatment method
+; 
