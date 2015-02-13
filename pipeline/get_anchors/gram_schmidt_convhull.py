@@ -10,7 +10,7 @@ def Projection_Find(M_orig, r, candidates, var):
 
     # set num reps/configs
     reps = 1
-    configs = 10
+    configs = 1
 
     n = M_orig[:, 0].size
     dim = M_orig[0, :].size
@@ -70,15 +70,22 @@ def Projection_Find(M_orig, r, candidates, var):
     # updating anchors
     print 'updating anchors', time.time()
 
+    # number of repititions
     for rep in range(0,reps):
+
+        print 'rep', rep, time.time()
+
+        # number of anchors
         for j in range(0, r-1):
 
-            # set number
+            print 'anchor', j, time.time()
+
+            # previous set number
             set_n = rep*(r-1)+j
 
             # create config table for storing
-            config_table = np.zeros((configs, r-1, dim))
-            config_avgs = np.zeros((len(candidates), configs))
+            config_table = np.zeros((configs, n, dim))
+            config_avgs = np.zeros((configs, len(candidates)))
 
             for n in range(0, configs):
 
@@ -86,7 +93,11 @@ def Projection_Find(M_orig, r, candidates, var):
 
                 # create new configuration
                 config = create_config(M, var)
+                config_table[n] = config
 
+                np.savetxt('log.config'+str(n), config)
+
+                # try replacing anchor j in configuration n
                 for i in candidates:
 
                     print 'candidate', i, time.time()
@@ -98,14 +109,23 @@ def Projection_Find(M_orig, r, candidates, var):
                     # TODO: should this be counting how many from the old config are in the new config???
                     count = count_incl(config, active_set)
 
-                # find the averages of all configurations across candidates
-                max_incl = np.argmax(config_avgs.sum(axis=1))
+                    # store the calculated values
+                    print count
+                    config_avgs[n][i] = count
 
-                # replace with the anchor with the highest average
-                anchor_sets[set_n+1] = np.concatenate((anchor_sets[set_n][:j], [max_incl], anchor_sets[set_n][j+1:]))
-                print anchor_sets[set_n+1]
+            # find the averages of all configurations across candidates
+            max_incl = np.argmax(config_avgs.sum(axis=0))
+            # max_incl = candidates[max(config_avgs[n])]
+
+            # replace with the anchor with the highest average
+            anchor_sets[set_n+1] = np.concatenate((anchor_sets[set_n][:j], [max_incl], anchor_sets[set_n][j+1:]))
+            print anchor_sets[set_n+1]
                 
+    # TODO: test the candidate configurations before selecting anchor_indices
+
     print 'finishing up'
+
+    np.savetxt("log.anchor_sets", anchor_sets)
 
     # convert numpy array to python list
     anchor_indices = anchor_sets[-1]
@@ -123,25 +143,42 @@ def create_config(M, var):
 
 def in_conv_hull(b, p):
 
+    print b.shape, p.shape
+
     def mfunc(x):
         return np.dot(x,b) - p
 
+    # def nfunc(x):
+    #     return np.dot((np.dot(x,b) - p),(np.dot(x,b) - p).T)[0,0]
+
     def func(x, sign=1.0):
-        return np.linalg.norm(mfunc(x))
+        # print np.linalg.norm(mfunc(x)), np.dot((np.dot(x,b) - p),(np.dot(x,b) - p).T)
+        return np.linalg.norm(mfunc(x), ord='fro')
+        # return nfunc(x)
+
+    bds = np.array([(0,1) for i in range(b[:,0].size)])
 
     cons = ({'type' : 'eq',
             'fun' : lambda x: np.array([sum(x) - 1]),
-            'jac' : lambda x: np.array([1] * x.size)},
-            {'type' : 'ineq',
-            'fun' : lambda x: np.array([-1 * sum(x < 0)]),
             'jac' : lambda x: np.array([1] * x.size)})
+            # {'type' : 'ineq',
+            # 'fun' : lambda x: np.array([-1 * sum(x <= 0)]),
+            # 'jac' : lambda x: np.array([1] * x.size)})
 
     n = b[:,0].size
     x0 = np.array([1./n]*n)
 
-    res = scipy.optimize.minimize(func, x0, constraints=cons)
+    res = scipy.optimize.minimize(func, x0, constraints=cons, bounds=bds)
 
-    return np.linalg.norm(np.dot(res.x , b) - p) ** 2 <= 1e-6
+    # print 
+    print res
+    # print b, p
+    print np.linalg.norm(mfunc(res.x), ord='fro')**2
+    return np.linalg.norm(mfunc(res.x), ord='fro')**2 <= 1e-7
+    # print np.linalg.norm(np.dot(res.x , b) - p) ** 2
+
+    # return np.linalg.norm(mfunc(res.x)) ** 2 <= 1e-7
+    # return nfunc(res.x) <= 1e-7
 
     # return True
 
@@ -173,11 +210,12 @@ def count_incl(config, anchor_set):
     for point in config:
         incl.append(in_conv_hull(anchors, point))
 
+    print incl
     return sum(incl)
 
 
 # TODO: should calculate variances beforehand
-def calc_vars(M, n):
+def Calc_Vars(M, n):
     
     rows,cols = M.shape
     var = np.zeros((rows, cols))
@@ -207,13 +245,25 @@ def calc_vars(M, n):
 
 if __name__ == '__main__':
 
-    print 'loading stored values', time.time()
+    pass
 
-    M = np.loadtxt('../result_out.20.M')
-    candidates = np.loadtxt('../result_out.20.candidates')
-    var = np.loadtxt('../result_out.20.var')
+    # basis = np.array([[0.8, 0.1, 0.1], [0.1, 0.8, 0.1], [0.1, 0.1, 0.8]])
+    # # point = np.array([0.9, 0.05, 0.05])
+    # point = np.array([0.3, 0.3, 0.4])
+    # print in_conv_hull(basis, point)
+    # print res
+    # print np.linalg.norm(np.dot(res.x,basis)-point)**2
+    # print res.x
+    # print np.dot(res.x,basis)
+    # print np.linalg.norm(np.dot(res.x,basis)-point)**2 <= 1e-7
 
-    print Projection_Find(M, 20, candidates, var)
+    # print 'loading stored values', time.time()
+
+    # M = np.loadtxt('../result_out.20.M')
+    # candidates = np.loadtxt('../result_out.20.candidates')
+    # var = np.loadtxt('../result_out.20.var')
+
+    # print Projection_Find(M, 20, candidates, var)
 
 
 

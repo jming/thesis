@@ -8,6 +8,7 @@ import scipy.sparse as sparse
 import time
 from Q_matrix import generate_Q_matrix 
 import scipy.io
+import time
 
 class Params:
 
@@ -56,17 +57,23 @@ params = Params(settings_file)
 params.dictionary_file = vocab_file
 M = scipy.io.loadmat(infile)['M']
 print "identifying candidate anchors"
-candidate_anchors = []
+candidate_anchors = np.loadtxt(outfile+".candidates")
+# candidate_anchors = []
 
-#only accept anchors that appear in a significant number of docs
-for i in xrange(M.shape[0]):
-    if len(np.nonzero(M[i, :])[1]) > params.anchor_thresh:
-        candidate_anchors.append(i)
+# #only accept anchors that appear in a significant number of docs
+# for i in xrange(M.shape[0]):
+#     if len(np.nonzero(M[i, :])[1]) > params.anchor_thresh:
+#         candidate_anchors.append(i)
 
-print len(candidate_anchors), "candidates"
+# print len(candidate_anchors), "candidates"
+# print candidate_anchors
+# np.savetxt(outfile+".candidates", np.array(candidate_anchors))
 
 #forms Q matrix from document-word matrix
 Q = generate_Q_matrix(M)
+# Q = np.loadtxt(outfile+".Q_original")
+# np.savetxt(outfile+".Q_original", Q)
+
 
 vocab = file(vocab_file).read().strip().split()
 
@@ -74,6 +81,8 @@ vocab = file(vocab_file).read().strip().split()
 print "Q sum is", Q.sum()
 V = Q.shape[0]
 print "done reading documents"
+# np.savetxt(outfile+'.Q', Q)
+
 
 #find anchors- this step uses a random projection
 #into low dimensional space
