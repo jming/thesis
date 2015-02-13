@@ -6,13 +6,21 @@ import os
 import errno
 from numpy.random import RandomState
 import random_projection as rp
-import gram_schmidt_stable as gs 
+# import gram_schmidt_stable as gs 
+import gram_schmidt_convhull as gs
+import time
 
 def findAnchors(Q, K, params, candidates):
     # Random number generator for generating dimension reduction
     prng_W = RandomState(params.seed)
     checkpoint_prefix = params.checkpoint_prefix
     new_dim = params.new_dim
+
+    # np.savetxt("result_out.20.Q_orig", Q)
+    print 'calculating variances', time.time()
+    var = gs.Calc_Vars(Q, 10)
+    np.savetxt('result_out.20.var', var)
+    # var = np.loadtxt('result_out.20.var')
 
     # row normalize Q
     row_sums = Q.sum(1)
@@ -23,10 +31,10 @@ def findAnchors(Q, K, params, candidates):
     # Q_red = rp.Random_Projection(Q.T, new_dim, prng_W)
     # Q_red = Q_red.T
 
-    # np.savetxt("result_out.20.Q", Q)
+    np.savetxt("result_out.20.Q_bar", Q)
 
+    (anchors, anchor_indices) = gs.Projection_Find(Q, K, candidates, var)
     # (anchors, anchor_indices) = gs.Projection_Find(Q_red, K, candidates)
-    (anchors, anchor_indices) = gs.Projection_Find(Q, K, candidates)
 
     # restore the original Q
     for i in xrange(len(Q[:, 0])):
