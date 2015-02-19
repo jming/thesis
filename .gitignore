@@ -14,4 +14,4 @@ autism_vocab.txt
 *.Q
 .DS_Store
 *.Q*
-log.config*
+log.*
