@@ -18,9 +18,9 @@ def findAnchors(Q, K, params, candidates):
 
     # np.savetxt("result_out.20.Q_orig", Q)
     print 'calculating variances', time.time()
-    var = gs.Calc_Vars(Q, 10)
-    np.savetxt('result_out.20.var', var)
-    # var = np.loadtxt('result_out.20.var')
+    # var = gs.Calc_Vars(Q, 10)
+    # np.savetxt('result_out.20.var', var)
+    var = np.loadtxt('result_out.20.var')
 
     # row normalize Q
     row_sums = Q.sum(1)

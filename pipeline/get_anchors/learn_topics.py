@@ -70,8 +70,8 @@ candidate_anchors = np.loadtxt(outfile+".candidates")
 # np.savetxt(outfile+".candidates", np.array(candidate_anchors))
 
 #forms Q matrix from document-word matrix
-Q = generate_Q_matrix(M)
-# Q = np.loadtxt(outfile+".Q_original")
+# Q = generate_Q_matrix(M)
+Q = np.loadtxt(outfile+".Q_original")
 # np.savetxt(outfile+".Q_original", Q)
 
 

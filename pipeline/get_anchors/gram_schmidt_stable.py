@@ -64,8 +64,40 @@ def Projection_Find(M_orig, r, candidates):
     anchor_indices_list = []
     for i in range(r):
         anchor_indices_list.append(anchor_indices[i])
+
+    print anchor_indices_list
     
     return (anchor_words, anchor_indices_list)
+
+
+if __name__ == '__main__':
+
+    print 'building test data'
+
+    M_orig = []
+    for i in range(10):
+        row = np.random.rand(100)
+        row = [r/sum(row) for r in row]
+        M_orig.append(row)
+    M_orig = np.array(M_orig)
+
+    rs = 5
+    
+    candidates = [x for x in range(7)]
+
+    # variances = []
+    # for i in range(10):
+    #     row = np.random.rand(100)
+    #     row = [r/10000 for r in row]
+    #     variances.append(row)
+    # variances = np.array(variances)
+
+    # print M_orig
+    # print rs, candidates
+    # print variances
+
+
+    print Projection_Find(M_orig, rs, candidates)
 
 
 
