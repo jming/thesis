@@ -74,7 +74,6 @@ candidate_anchors = np.loadtxt(outfile+".candidates")
 Q = np.loadtxt(outfile+".Q_original")
 # np.savetxt(outfile+".Q_original", Q)
 
-
 vocab = file(vocab_file).read().strip().split()
 
 #check that Q sum is 1 or close to it

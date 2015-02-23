@@ -189,7 +189,6 @@ def in_conv_hull(b, p):
 
     # return np.linalg.norm(mfunc(res.x)) ** 2 <= 1e-7
     # return nfunc(res.x) <= 1e-7
-
     # return True
 
     # print basis
@@ -226,7 +225,7 @@ def count_incl(config, anchor_set):
 
 # TODO: should calculate variances beforehand
 def Calc_Vars(M, n):
-    
+
     rows,cols = M.shape
     var = np.zeros((rows, cols))
     
@@ -298,6 +297,5 @@ if __name__ == '__main__':
     # # var = np.loadtxt('../result_out.20.var')
 
     # # print Projection_Find(M, 20, candidates, var)
-
 
 

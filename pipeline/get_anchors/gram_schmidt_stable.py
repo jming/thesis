@@ -100,4 +100,3 @@ if __name__ == '__main__':
     print Projection_Find(M_orig, rs, candidates)
 
 
-
