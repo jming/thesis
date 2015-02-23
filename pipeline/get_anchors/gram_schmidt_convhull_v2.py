@@ -3,10 +3,6 @@ import scipy.optimize
 import random
 import gram_schmidt_stable as gss
 import time
-<<<<<<< HEAD
-import math
-=======
->>>>>>> bd990eaec57a6ce3a0428f7cc3a7b09f45593949
 
 def Projection_Find(M_orig, r, candidates, var):
     
