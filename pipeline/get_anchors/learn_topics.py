@@ -89,7 +89,7 @@ print "done reading documents"
 anchors = findAnchors(Q, K, params, candidate_anchors)
 print "anchors are:"
 for i, a in enumerate(anchors):
-    print i, vocab[a]
+    print i, vocab[int(a)]
 
 #recover topics
 A, topic_likelihoods, R = do_recovery(Q, anchors, loss, params) 

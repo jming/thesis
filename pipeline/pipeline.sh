@@ -2,7 +2,7 @@
 
 echo 'start pipeline'
 
-N='22'
+N='23'
 
 # echo 'processing posts'
 # # python get_q/getq.py all_posts.txt chv.tsv cui_counter.mat cui_list.txt

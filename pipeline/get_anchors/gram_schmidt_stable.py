@@ -65,7 +65,7 @@ def Projection_Find(M_orig, r, candidates):
     for i in range(r):
         anchor_indices_list.append(anchor_indices[i])
 
-    print anchor_indices_list
+    # print anchor_indices_list
     
     return (anchor_words, anchor_indices_list)
 

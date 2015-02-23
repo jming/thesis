@@ -7,7 +7,8 @@ import errno
 from numpy.random import RandomState
 import random_projection as rp
 # import gram_schmidt_stable as gs 
-import gram_schmidt_convhull as gs
+# import gram_schmidt_convhull as gs
+import gram_schmidt_convhull_v2 as gs
 import time
 
 def findAnchors(Q, K, params, candidates):
@@ -35,6 +36,8 @@ def findAnchors(Q, K, params, candidates):
 
     (anchors, anchor_indices) = gs.Projection_Find(Q, K, candidates, var)
     # (anchors, anchor_indices) = gs.Projection_Find(Q_red, K, candidates)
+    # anchor_indices = [7.,24.,2058.,1595.,787.,2319.,1486.,2084.,20.,669.,2209.,561.,427.,2056.,936.,2770.,2691.,29.,2671.,2134.]
+    anchor_indices = [int(a) for a in anchor_indices]
 
     # restore the original Q
     for i in xrange(len(Q[:, 0])):
