@@ -3,6 +3,7 @@ import scipy.optimize
 import random
 import gram_schmidt_stable as gss
 import time
+import math
 
 def Projection_Find(M_orig, r, candidates, var):
     
@@ -11,10 +12,11 @@ def Projection_Find(M_orig, r, candidates, var):
     dim_n, dim_m = M_orig.shape
     
     configs = 10
-    tries = 20
+    # tries = 20
+    tries = 100
     k_star = 5
     
-    config_tables = np.zeros((k_star, configs, dim_n, dim_m))
+    config_tables = np.zeros((tries/k_star, configs, dim_n, dim_m))
     anchor_sets = np.zeros((tries+1, r))
     set_evals = np.zeros(tries+1)
     
@@ -28,8 +30,8 @@ def Projection_Find(M_orig, r, candidates, var):
     print 'try', 0, set_evals[0], anchor_sets[0]
 
     # write to text file
-    np.savetxt('../log.set_evals', set_evals)
-    np.savetxt('../log.anchor_sets', anchor_sets)
+    np.savetxt('log.set_evals', set_evals)
+    np.savetxt('log.anchor_sets', anchor_sets)
     
     # iterate on this anchor set
     print 'iterate on anchor set', time.time()
@@ -67,8 +69,8 @@ def Projection_Find(M_orig, r, candidates, var):
             anchor_sets[k+1] = anchor_sets[k]  
 
         print 'try', k+1, time.time(), set_evals[k+1], active_set
-        np.savetxt('../log.set_evals', set_evals)
-        np.savetxt('../log.anchor_sets', anchor_sets)      
+        np.savetxt('log.set_evals', set_evals)
+        np.savetxt('log.anchor_sets', anchor_sets)      
         
     print 'finishing up', time.time()
     
@@ -81,7 +83,9 @@ def Projection_Find(M_orig, r, candidates, var):
 def create_config(M, var):
     # TODO: try sqrt
     # return 2 * var * np.random.random_sample((M.shape)) - var
-    return 2 * sqrt(var) * np.random.random_sample((M.shape)) - sqrt(var)
+    var_sqrt = np.sqrt(var)
+    # var_sqrt = var
+    return 2 * var_sqrt * np.random.random_sample((M.shape)) - var_sqrt
 
 
 def select_anchor(options, var, basis_v=None, M=None):
@@ -127,6 +131,9 @@ def evaluate_set(config, anchor_set):
     return sum(incl)
 
 def in_conv_hull(b, p):
+
+    print 'anchors', b
+    print 'point', p
 
     def mfunc(x):
         return np.dot(x,b) - p
