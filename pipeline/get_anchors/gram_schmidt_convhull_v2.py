@@ -3,7 +3,10 @@ import scipy.optimize
 import random
 import gram_schmidt_stable as gss
 import time
+<<<<<<< HEAD
 import math
+=======
+>>>>>>> bd990eaec57a6ce3a0428f7cc3a7b09f45593949
 
 def Projection_Find(M_orig, r, candidates, var):
     
@@ -86,7 +89,6 @@ def create_config(M, var):
     var_sqrt = np.sqrt(var)
     # var_sqrt = var
     return 2 * var_sqrt * np.random.random_sample((M.shape)) - var_sqrt
-
 
 def select_anchor(options, var, basis_v=None, M=None):
 
