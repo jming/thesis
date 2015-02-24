@@ -82,8 +82,10 @@ def Projection_Find(M_orig, r, candidates, var):
 def create_config(M, var):
     # TODO: try sqrt
     # return 2 * var * np.random.random_sample((M.shape)) - var
-    var_sqrt = np.sqrt(var)
-    # var_sqrt = var
+    # var_sqrt = np.sqrt(var)
+    # print 'var', var[0]
+    # print 'varsqrt', var_sqrt[0]
+    var_sqrt = var
     return 2 * var_sqrt * np.random.random_sample((M.shape)) - var_sqrt
 
 def select_anchor(options, var, basis_v=None, M=None):
@@ -130,8 +132,8 @@ def evaluate_set(config, anchor_set):
 
 def in_conv_hull(b, p):
 
-    print 'anchors', b
-    print 'point', p
+    # print 'anchors', b
+    # print 'point', p
 
     def mfunc(x):
         return np.dot(x,b) - p
@@ -149,6 +151,7 @@ def in_conv_hull(b, p):
     x0 = np.array([1./n]*n)
 
     res = scipy.optimize.minimize(func, x0, constraints=cons, bounds=bds)
+    # print np.linalg.norm(mfunc(res.x), ord='fro')**2
 
     return np.linalg.norm(mfunc(res.x), ord='fro')**2 <= 1e-7
 
@@ -157,7 +160,7 @@ if __name__ == '__main__':
     print 'building test data'
 
     M_orig = []
-    for i in range(10):
+    for i in range(20):
         row = np.random.rand(100)
         row = [r/sum(row) for r in row]
         M_orig.append(row)
@@ -165,10 +168,10 @@ if __name__ == '__main__':
 
     rs = 5
 
-    candidates = [x for x in range(7)]
+    candidates = [x for x in range(15)]
 
     variances = []
-    for i in range(10):
+    for i in range(20):
         row = np.random.rand(100)
         row = [r/1000 for r in row]
         variances.append(row)

@@ -11,7 +11,8 @@ autism_vocab.txt
 *.txt
 *.M
 *.var
-*.Q
 .DS_Store
 *.Q*
 log.*
+*.A
+*.R
