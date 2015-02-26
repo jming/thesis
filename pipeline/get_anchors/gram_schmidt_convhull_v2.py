@@ -43,18 +43,28 @@ def Projection_Find(M_orig, r, candidates, var):
                 config_tables[k/k_star][n] = config
         
         # select an anchor to swap out
-        so = select_anchor(anchor_sets[k], var)
-        so_val = anchor_sets[k][so]
-        # select an anchor to swap in
-        # candidates_less = [c for c in candidates if c not in anchor_sets[k]]
-        candidates_less = list(set(candidates) - set(anchor_sets[k]))
-        si = select_anchor(candidates_less, var, anchor_sets[k][so], M)
-        si_val = candidates_less[si]
+        while True:
+
+            so = select_anchor(anchor_sets[k], var)
+            so_val = anchor_sets[k][so]
+            # select an anchor to swap in
+            # candidates_less = [c for c in candidates if c not in anchor_sets[k]]
+            candidates_less = list(set(candidates) - set(anchor_sets[k]))
+            si = select_anchor(candidates_less, var, anchor_sets[k][so], M)
+            si_val = candidates_less[si]
+
+            active_set = np.concatenate((anchor_sets[k][:so], [si_val], anchor_sets[k][so+1:]))
+            # print active_set
+            # print active_set in anchor_sets
+            # print anchor_sets
+            # if active_set not in anchor_sets:
+            if not any((active_set == x).all() for x in anchor_sets):
+                print 'out'
+                break
         
         # print 'so,si', so, so_val, si, si_val
         
         # evaluate the goodness of this swap
-        active_set = np.concatenate((anchor_sets[k][:so], [si_val], anchor_sets[k][so+1:]))
         evals = np.zeros(configs)
         for i,config in enumerate(config_tables[k/k_star]):
             evals[i] = evaluate_set(config, active_set)
