@@ -26,7 +26,7 @@ def Projection_Find(M_orig, r, candidates, var):
     anchor_sets[0] = basis
     set_evals[0] = evaluate_set(M_orig, anchor_sets[0])
     
-    print 'try', 0, set_evals[0], anchor_sets[0]
+    print 'try orig', 0, set_evals[0], anchor_sets[0]
 
     # write to text file
     np.savetxt('log.set_evals', set_evals)
@@ -35,6 +35,16 @@ def Projection_Find(M_orig, r, candidates, var):
     # iterate on this anchor set
     print 'iterate on anchor set', time.time()
     for k in range(tries):
+
+        if k == 0:
+            active_set = anchor_sets[0]
+            evals = np.zeros(configs)
+            for i,config in enumerate(config_tables[k/k_star]):
+                evals[i] = evaluate_set(config, active_set)
+            # print 'evals', evals
+            set_evals[k] = sum(evals)/len(evals)
+
+            print 'try', 0, set_evals[0], anchor_sets[0]
         
         # create a new set of configurations
         if k % k_star == 0:
@@ -78,6 +88,7 @@ def Projection_Find(M_orig, r, candidates, var):
             anchor_sets[k+1] = anchor_sets[k]  
 
         print 'try', k+1, time.time(), set_evals[k+1], active_set
+        print 'try orig', k+1, time.time(), evaluate_set(M_orig, active_set), active_set
         np.savetxt('log.set_evals', set_evals)
         np.savetxt('log.anchor_sets', anchor_sets)      
         

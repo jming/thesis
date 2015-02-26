@@ -83,14 +83,17 @@ print len(candidate_anchors), "candidates"
 print "Q sum is", Q_emp.sum()
 print "done reading documents"
 
-# row normalize Q
+# row normalize Q and var
 Q_bar = np.zeros((M.shape))
+var = np.zeros((M.shape))
 row_sums = Q_emp.sum(1)
 for i in xrange(len(Q_emp[:,0])):
 	Q_bar[i,:] = Q_emp[i,:]/float(row_sums[i])
+	var[i,:] = var_analytical[i,:]/(float(row_sums[i])**2)
+
 
 # find anchors
-(anchors, anchor_indices) = gs.Projection_Find(Q_bar, K, candidate_anchors, var_analytical)
+(anchors, anchor_indices) = gs.Projection_Find(Q_bar, K, candidate_anchors, var)
 anchor_indices = [int(a) for a in anchor_indices]
 print "anchors are:"
 for i, a in enumerate(anchors):
