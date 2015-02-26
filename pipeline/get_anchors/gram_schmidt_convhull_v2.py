@@ -59,7 +59,7 @@ def Projection_Find(M_orig, r, candidates, var):
             # print anchor_sets
             # if active_set not in anchor_sets:
             if not any((active_set == x).all() for x in anchor_sets):
-                print 'out'
+                # print 'out'
                 break
         
         # print 'so,si', so, so_val, si, si_val
@@ -108,7 +108,8 @@ def select_anchor(options, var, basis_v=None, M=None):
             dist = np.dot(Mi, Mi)
             dists.append(dist)
         # print 'dists', dists
-        dists = [d/sum(dists) for d in dists]
+        if sum(dists) != 0:
+            dists = [d/sum(dists) for d in dists]
         varss = [1/sum(var[i]) for i in options]
         varss = [v/sum(varss) for v in varss]
         probs = [(a+b)/2 for a,b in zip(dists, varss)]
