@@ -92,19 +92,32 @@ def select_anchor(options, var, basis_v=None, M=None):
 
     # probs is 1/sum(variance) + distance
     if basis_v and M != None:
-        probs = []
+        dists = []
         for i in options:
-            M[i] = M[i] - np.dot(M[i], basis_v)*basis_v
-            dist = np.dot(M[i], M[i])
+            Mi = M[i] - np.dot(M[i], basis_v)*basis_v
+            dist = np.dot(Mi, Mi)
+            dists.append(dist)
+        # print 'dists', dists
+        dists = [d/sum(dists) for d in dists]
+        varss = [1/sum(var[i]) for i in options]
+        varss = [v/sum(varss) for v in varss]
+        probs = [(a+b)/2 for a,b in zip(dists, varss)]
+            # M[i] = 
+            # dist = np.dot(M[i], M[i])
+
             # TODO: scale this
-            probs.append(1/(sum(var[i])) + dist)
+            # print 1/(sum(var[i])), dist
+            # probs.append(1/(sum(var[i])) + dist)
 
     # probs is 1/sum(variance)
     # because sqrt(prod(var)) is too small it becomes 0
     else:
         probs = [1/sum(var[i]) for i in options]
     
+    # print 'var', [sum(var[i]) for i in options]
+    # print 'probs before', probs
     probs = [p / sum(probs) for p in probs]
+    # print 'probs after', probs
 
     return weighted_random(probs)
 
