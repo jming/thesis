@@ -17,6 +17,7 @@ def Projection_Find(M_orig, r, candidates, var):
     
     config_tables = np.zeros((tries/k_star, configs, dim_n, dim_m))
     anchor_sets = np.zeros((tries+1, r))
+    evals = np.zeros((tries+1, configs, dim_n))
     set_evals = np.zeros(tries+1)
     
     # find basic anchorset
@@ -24,9 +25,10 @@ def Projection_Find(M_orig, r, candidates, var):
     
     words, basis = gss.Projection_Find(M, r, candidates)
     anchor_sets[0] = basis
-    set_evals[0] = evaluate_set(M_orig, anchor_sets[0])
-    
-    print 'try orig', 0, set_evals[0], anchor_sets[0]
+    print M_orig.shape, anchor_sets[0].shape
+    # set_incl = evaluate_set(M_orig, anchor_sets[0])
+    # set_evals[0] = sum(set_incl)
+    # print 'try orig', 0, set_evals[0], anchor_sets[0]
 
     # write to text file
     np.savetxt('log.set_evals', set_evals)
@@ -38,11 +40,11 @@ def Projection_Find(M_orig, r, candidates, var):
 
         if k == 0:
             active_set = anchor_sets[0]
-            evals = np.zeros(configs)
+            # evals = np.zeros(configs)
             for i,config in enumerate(config_tables[k/k_star]):
-                evals[i] = evaluate_set(config, active_set)
+                evals[k][i] = evaluate_set(config, active_set)
             # print 'evals', evals
-            set_evals[k] = sum(evals)/len(evals)
+            set_evals[k] = np.sum(evals[k,:])/len(evals[k,:])
 
             print 'try', 0, set_evals[0], anchor_sets[0]
         
@@ -75,20 +77,24 @@ def Projection_Find(M_orig, r, candidates, var):
         # print 'so,si', so, so_val, si, si_val
         
         # evaluate the goodness of this swap
-        evals = np.zeros(configs)
+        # evals = np.zeros(configs)
         for i,config in enumerate(config_tables[k/k_star]):
-            evals[i] = evaluate_set(config, active_set)
+            evals[k+1][i] = evaluate_set(config, active_set)
         # print 'evals', evals
-        set_evals[k+1] = sum(evals)/len(evals)
+        set_evals[k+1] = np.sum(evals[k+1,:])/len(evals[k+1,:])
+        # set_evals[k+1] = sum(evals)/len(evals)
+
+        print 'try', k+1, time.time(), set_evals[k+1], active_set
 
         # decide on whether to switch up swap
-        if set_evals[k+1] >= set_evals[k]:
+        if set_evals[k+1] <= set_evals[k]:
             anchor_sets[k+1] = active_set
         else:
             anchor_sets[k+1] = anchor_sets[k]  
-
-        print 'try', k+1, time.time(), set_evals[k+1], active_set
-        print 'try orig', k+1, time.time(), evaluate_set(M_orig, active_set), active_set
+            set_evals[k+1] = set_evals[k]
+        
+        # print 'try orig', k+1, time.time(), evaluate_set(M_orig, active_set), active_set
+        np.savetxt('log.evals', evals.flatten())
         np.savetxt('log.set_evals', set_evals)
         np.savetxt('log.anchor_sets', anchor_sets)      
         
@@ -106,8 +112,31 @@ def create_config(M, var):
     # var_sqrt = np.sqrt(var)
     # print 'var', var[0]
     # print 'varsqrt', var_sqrt[0]
-    var_sqrt = var
-    return 2 * var_sqrt * np.random.random_sample((M.shape)) - var_sqrt
+    # var_sqrt = np.log(var)
+    # new_config = np.exp(2 * var_sqrt * np.random.random_sample((M.shape)) - var_sqrt)
+    # number of less than 0
+    zeros = np.where(M == 0)
+    print 'zeros', len(zeros[0])
+    # print zeros
+    for r,c in zip(zeros[0], zeros[1]):
+        M[r,c] = np.float64(0.00001)
+        # print M[r,c]
+    new_config = np.exp(2 * var * np.random.random_sample((M.shape)) - var + np.log(M))
+
+    # new_config = 2 * var * np.random.random_sample((M.shape)) - var + M
+    print 'less than 0', len(np.where(new_config < 0)[0]), 'equal 0', len(np.where(new_config == 0)[0])
+    min_val = np.min(new_config)
+    new_config = min_val + new_config
+    # print 'less than 0', len(np.where(new_config < 0)[0])
+    # new_config = np.where(new_config >= 0, new_config, 0)
+
+    #normalize
+    Q = new_config
+    row_sums = Q.sum(1)
+    for i in xrange(len(Q[:, 0])):
+        Q[i, :] = Q[i, :]/float(row_sums[i])
+
+    return Q
 
 def select_anchor(options, var, basis_v=None, M=None):
 
@@ -162,8 +191,11 @@ def evaluate_set(config, anchor_set):
     
     for point in config:
         incl.append(in_conv_hull(anchors, point))
-        
-    return sum(incl)
+    
+    # np.savetxt('')
+
+    # return sum(incl)
+    return incl
 
 def in_conv_hull(b, p):
 
@@ -185,12 +217,29 @@ def in_conv_hull(b, p):
     n = b[:,0].size
     x0 = np.array([1./n]*n)
 
+    # print np.linalg.norm(mfunc(res.x), ord='fro')**2 <= 1e-7
+
     res = scipy.optimize.minimize(func, x0, constraints=cons, bounds=bds)
     # print np.linalg.norm(mfunc(res.x), ord='fro')**2
 
-    return np.linalg.norm(mfunc(res.x), ord='fro')**2 <= 1e-7
+    # return np.linalg.norm(mfunc(res.x), ord='fro')**2 <= 1e-7
+    # return np.linalg.norm(mfunc(res.x), ord='fro')**2
+    return np.linalg.norm(mfunc(res.x), ord=1)**2
 
 if __name__ == '__main__':
+
+    # active_set = [  284.  ,  91. , 2058. , 1595. , 1409. , 2319. , 1486. , 2084.  ,  20. ,  669.,  2236.,  1873. , 1638. , 2056.  , 936.,  2770.,  2856.,    29.,  2671.,  2134.]
+
+    # print 'loading'
+    # M = np.loadtxt("../result_out.20.Q_bar")
+    # var = np.loadtxt("../result_out.20.var")
+
+    # print 'calc'
+    # config = create_config(M,var)
+
+    # print evaluate_set(config, active_set)
+
+
 
     print 'building test data'
 
