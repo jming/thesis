@@ -47,6 +47,7 @@ def Projection_Find(M_orig, r, candidates, var):
             set_evals[k] = np.sum(evals[k,:])/len(evals[k,:])
 
             print 'try', 0, set_evals[0], anchor_sets[0]
+            set_evals[k] = 1.
         
         # create a new set of configurations
         if k % k_star == 0:
@@ -115,20 +116,31 @@ def create_config(M, var):
     # var_sqrt = np.log(var)
     # new_config = np.exp(2 * var_sqrt * np.random.random_sample((M.shape)) - var_sqrt)
     # number of less than 0
-    zeros = np.where(M == 0)
-    print 'zeros', len(zeros[0])
-    # print zeros
-    for r,c in zip(zeros[0], zeros[1]):
-        M[r,c] = np.float64(0.00001)
-        # print M[r,c]
-    new_config = np.exp(2 * var * np.random.random_sample((M.shape)) - var + np.log(M))
 
-    # new_config = 2 * var * np.random.random_sample((M.shape)) - var + M
-    print 'less than 0', len(np.where(new_config < 0)[0]), 'equal 0', len(np.where(new_config == 0)[0])
-    min_val = np.min(new_config)
-    new_config = min_val + new_config
-    # print 'less than 0', len(np.where(new_config < 0)[0])
-    # new_config = np.where(new_config >= 0, new_config, 0)
+    dim_n, dim_m = M.shape
+
+    new_config = np.zeros(M.shape)
+    col_sums = M.sum(0)
+    for i,row in enumerate(M):
+        alphas = row + col_sums
+        # print row, col_sums, alphas
+        new_config[i] = np.random.dirichlet(alphas)
+
+
+    # zeros = np.where(M == 0)
+    # print 'zeros', len(zeros[0])
+    # # print zeros
+    # for r,c in zip(zeros[0], zeros[1]):
+    #     M[r,c] = np.float64(0.00001)
+    #     # print M[r,c]
+    # new_config = np.exp(2 * var * np.random.random_sample((M.shape)) - var + np.log(M))
+
+    # # new_config = 2 * var * np.random.random_sample((M.shape)) - var + M
+    # print 'less than 0', len(np.where(new_config < 0)[0]), 'equal 0', len(np.where(new_config == 0)[0])
+    # min_val = np.min(new_config)
+    # new_config = min_val + new_config
+    # # print 'less than 0', len(np.where(new_config < 0)[0])
+    # # new_config = np.where(new_config >= 0, new_config, 0)
 
     #normalize
     Q = new_config
