@@ -18,6 +18,7 @@ def Projection_Find(M_orig, r, candidates, var):
     config_tables = np.zeros((tries/k_star, configs, dim_n, dim_m))
     anchor_sets = np.zeros((tries+1, r))
     evals = np.zeros((tries+1, configs, dim_n))
+    evals_configs = np.zeros((tries/k_star, configs, dim_n))
     set_evals = np.zeros(tries+1)
     
     # find basic anchorset
@@ -37,7 +38,15 @@ def Projection_Find(M_orig, r, candidates, var):
     # iterate on this anchor set
     print 'iterate on anchor set', time.time()
     for k in range(tries):
-
+        
+        # create a new set of configurations
+        if k % k_star == 0:
+            for n in range(configs):
+                config = create_config(M, var)
+                config_tables[k/k_star][n] = config
+                evals_configs[k/k_star][n] = evaluate_set(config, anchor_sets[0])
+            np.savetxt('log.evals_configs', evals_configs.flatten())
+        
         if k == 0:
             active_set = anchor_sets[0]
             # evals = np.zeros(configs)
@@ -47,14 +56,8 @@ def Projection_Find(M_orig, r, candidates, var):
             set_evals[k] = np.sum(evals[k,:])/len(evals[k,:])
 
             print 'try', 0, set_evals[0], anchor_sets[0]
-            set_evals[k] = 1.
-        
-        # create a new set of configurations
-        if k % k_star == 0:
-            for n in range(configs):
-                config = create_config(M, var)
-                config_tables[k/k_star][n] = config
-        
+            # set_evals[k] = 1.
+
         # select an anchor to swap out
         while True:
 
@@ -117,14 +120,12 @@ def create_config(M, var):
     # new_config = np.exp(2 * var_sqrt * np.random.random_sample((M.shape)) - var_sqrt)
     # number of less than 0
 
-    dim_n, dim_m = M.shape
-
-    new_config = np.zeros(M.shape)
-    col_sums = M.sum(0)
-    for i,row in enumerate(M):
-        alphas = row + col_sums
-        # print row, col_sums, alphas
-        new_config[i] = np.random.dirichlet(alphas)
+    # new_config = np.zeros(M.shape)
+    # col_sums = M.sum(0)
+    # for i,row in enumerate(M):
+    #     alphas = row + col_sums
+    #     # print row, col_sums, alphas
+    #     new_config[i] = np.random.dirichlet(alphas)
 
 
     # zeros = np.where(M == 0)
@@ -135,10 +136,10 @@ def create_config(M, var):
     #     # print M[r,c]
     # new_config = np.exp(2 * var * np.random.random_sample((M.shape)) - var + np.log(M))
 
-    # # new_config = 2 * var * np.random.random_sample((M.shape)) - var + M
+    new_config = 2 * var * np.random.random_sample((M.shape)) - var + M
     # print 'less than 0', len(np.where(new_config < 0)[0]), 'equal 0', len(np.where(new_config == 0)[0])
-    # min_val = np.min(new_config)
-    # new_config = min_val + new_config
+    min_val = np.min(new_config)
+    new_config = min_val + new_config
     # # print 'less than 0', len(np.where(new_config < 0)[0])
     # # new_config = np.where(new_config >= 0, new_config, 0)
 
