@@ -16,9 +16,10 @@ def Projection_Find(M_orig, r, candidates, var):
     k_star = 5
     
     config_tables = np.zeros((tries/k_star, configs, dim_n, dim_m))
+    # config_tries = np.zeros((tries/k_star, 2, configs, dim_n, dim_m))
     anchor_sets = np.zeros((tries+1, r))
     evals = np.zeros((tries+1, configs, dim_n))
-    evals_configs = np.zeros((tries/k_star, configs, dim_n))
+    evals_configs = np.zeros((tries/k_star, configs, dim_n, dim_m))
     set_evals = np.zeros(tries+1)
     
     # find basic anchorset
@@ -45,6 +46,8 @@ def Projection_Find(M_orig, r, candidates, var):
                 config = create_config(M, var)
                 config_tables[k/k_star][n] = config
                 evals_configs[k/k_star][n] = evaluate_set(config, anchor_sets[0])
+                # print len(evaled), evaled.shape
+                # evals_configs[k/k_star][n] = evaled
             np.savetxt('log.evals_configs', evals_configs.flatten())
         
         if k == 0:
@@ -140,6 +143,8 @@ def create_config(M, var):
     # print 'less than 0', len(np.where(new_config < 0)[0]), 'equal 0', len(np.where(new_config == 0)[0])
     min_val = np.min(new_config)
     new_config = min_val + new_config
+
+    print 'min', min_val, 'new', np.min(new_config), np.max(new_config), 'old', np.min(M), np.max(M)
     # # print 'less than 0', len(np.where(new_config < 0)[0])
     # # new_config = np.where(new_config >= 0, new_config, 0)
 
@@ -237,7 +242,7 @@ def in_conv_hull(b, p):
 
     # return np.linalg.norm(mfunc(res.x), ord='fro')**2 <= 1e-7
     # return np.linalg.norm(mfunc(res.x), ord='fro')**2
-    return np.linalg.norm(mfunc(res.x), ord=1)**2
+    return (np.linalg.norm(mfunc(res.x), ord=1)**2)/p
 
 if __name__ == '__main__':
 

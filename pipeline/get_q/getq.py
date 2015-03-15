@@ -20,10 +20,10 @@ _end = '_end_'
 def get_cui_trie(filename, stopwords):
 
 	# load_chv
-	# column_names = ['cui', 'term', 'chv_pref_name']
-	# cui_df = pd.read_csv(filename, sep='\t', names=column_names, usecols=[0,1,2])
+	column_names = ['cui', 'term', 'chv_pref_name']
+	cui_df = pd.read_csv(filename, sep='\t', names=column_names, usecols=[0,1,2])
 	# cui_df = pd.read_csv(filename, names=column_names, usecols=[0,1,2])
-	cui_df = pd.read_csv(filename)
+	# cui_df = pd.read_csv(filename)
 	stopwords_list = get_stopwords_list(stopwords)
 	# print stopwords_list
 
