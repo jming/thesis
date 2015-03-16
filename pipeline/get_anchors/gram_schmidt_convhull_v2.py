@@ -19,7 +19,7 @@ def Projection_Find(M_orig, r, candidates, var):
     # config_tries = np.zeros((tries/k_star, 2, configs, dim_n, dim_m))
     anchor_sets = np.zeros((tries+1, r))
     evals = np.zeros((tries+1, configs, dim_n))
-    evals_configs = np.zeros((tries/k_star, configs, dim_n, dim_m))
+    evals_configs = np.zeros((tries/k_star, configs, dim_n))
     set_evals = np.zeros(tries+1)
     
     # find basic anchorset
@@ -131,20 +131,24 @@ def create_config(M, var):
     #     new_config[i] = np.random.dirichlet(alphas)
 
 
-    # zeros = np.where(M == 0)
-    # print 'zeros', len(zeros[0])
-    # # print zeros
-    # for r,c in zip(zeros[0], zeros[1]):
-    #     M[r,c] = np.float64(0.00001)
-    #     # print M[r,c]
-    # new_config = np.exp(2 * var * np.random.random_sample((M.shape)) - var + np.log(M))
+    zeros = np.where(M <= 0)
+    
+    # print zeros
+    for r,c in zip(zeros[0], zeros[1]):
+        M[r,c] = np.float64(0.0000001)
+        # print M[r,c]
 
-    new_config = 2 * var * np.random.random_sample((M.shape)) - var + M
+
+    # print 'zeros', len(np.where(M == 0))
+    # print 'less than 0', len(np.where(M < 0)[0]), 'equal 0', len(np.where(M == 0)[0])
+    new_config = np.exp(2 * var * np.random.random_sample((M.shape)) - var + np.log(M))
+
+    # new_config = 2 * var * np.random.random_sample((M.shape)) - var + M
     # print 'less than 0', len(np.where(new_config < 0)[0]), 'equal 0', len(np.where(new_config == 0)[0])
-    min_val = np.min(new_config)
-    new_config = min_val + new_config
+    # min_val = np.min(new_config)
+    # new_config = abs(min_val) + new_config
 
-    print 'min', min_val, 'new', np.min(new_config), np.max(new_config), 'old', np.min(M), np.max(M)
+    # print 'min', min_val, 'new', np.min(new_config), np.max(new_config), 'old', np.min(M), np.max(M)
     # # print 'less than 0', len(np.where(new_config < 0)[0])
     # # new_config = np.where(new_config >= 0, new_config, 0)
 
@@ -242,7 +246,8 @@ def in_conv_hull(b, p):
 
     # return np.linalg.norm(mfunc(res.x), ord='fro')**2 <= 1e-7
     # return np.linalg.norm(mfunc(res.x), ord='fro')**2
-    return (np.linalg.norm(mfunc(res.x), ord=1)**2)/p
+    return (np.linalg.norm(mfunc(res.x), ord=1)**2)
+    # /np.linalg.norm(p, ord=1)
 
 if __name__ == '__main__':
 
