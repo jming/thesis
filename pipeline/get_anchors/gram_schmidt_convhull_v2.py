@@ -12,7 +12,7 @@ def Projection_Find(M_orig, r, candidates, var):
     
     configs = 10
     # tries = 20
-    tries = 100
+    tries = 10
     k_star = 5
     
     config_tables = np.zeros((tries/k_star, configs, dim_n, dim_m))
@@ -122,26 +122,32 @@ def create_config(M, var):
     # var_sqrt = np.log(var)
     # new_config = np.exp(2 * var_sqrt * np.random.random_sample((M.shape)) - var_sqrt)
     # number of less than 0
+    # print 'new config'
+    new_config = np.zeros(M.shape)
+    col_sums = M.sum(0)
+    # V = M.shape[0]
+    # print 'V', V
+    # sizes = np.array([1./V for v in range(V)])
+    # print 'sizes', sizes
+    for i,row in enumerate(M):
+        # alphas = row + sizes
+        alphas = row + col_sums
+        # print row, col_sums, alphas
+        new_config[i] = np.random.dirichlet(alphas)
+    # print 'new config created'
 
-    # new_config = np.zeros(M.shape)
-    # col_sums = M.sum(0)
-    # for i,row in enumerate(M):
-    #     alphas = row + col_sums
-    #     # print row, col_sums, alphas
-    #     new_config[i] = np.random.dirichlet(alphas)
 
-
-    zeros = np.where(M <= 0)
+    # zeros = np.where(M <= 0)
     
     # print zeros
-    for r,c in zip(zeros[0], zeros[1]):
-        M[r,c] = np.float64(0.0000001)
+    # for r,c in zip(zeros[0], zeros[1]):
+    #     M[r,c] = np.float64(0.0000001)
         # print M[r,c]
 
 
     # print 'zeros', len(np.where(M == 0))
     # print 'less than 0', len(np.where(M < 0)[0]), 'equal 0', len(np.where(M == 0)[0])
-    new_config = np.exp(2 * var * np.random.random_sample((M.shape)) - var + np.log(M))
+    # new_config = np.exp(2 * var * np.random.random_sample((M.shape)) - var + np.log(M))
 
     # new_config = 2 * var * np.random.random_sample((M.shape)) - var + M
     # print 'less than 0', len(np.where(new_config < 0)[0]), 'equal 0', len(np.where(new_config == 0)[0])

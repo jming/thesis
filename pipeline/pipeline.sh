@@ -24,7 +24,8 @@ echo 'starting words recovery'
 for loss in L2
 do
 	# for K in 5 20 50 100
-	for K in 20
+	# for K in 20
+	for K in 5 50 100
 	do
 		echo 'learning with nonnegative recover method using $loss loss...'
 		# python get_anchors/learn_topics.py cui_counter.mat get_anchors/settings.example cui_list.txt $K $loss result\_out.$K
