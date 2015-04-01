@@ -1,0 +1,675 @@
+well in self (finding)
+; :; chronic fatigue syndrome
+; butting (finding)
+; hope
+; aortic valve stenosis
+; pulmonary embolism
+; well in self (finding)
+; thinking
+; vision
+; liking
+; 
+diaper rash
+; :; volition
+; vision
+; liking
+; thinking
+; used by (attribute)
+; aortic valve stenosis
+; 
+charmed
+; :; butting (finding)
+; personal appearance
+; thinking
+; chronic fatigue syndrome
+; vision
+; 
+cracked lips (finding)
+; :; cracked lips (finding)
+; aortic valve stenosis
+; vision
+; 
+challenge tests
+; :; challenge tests
+; will not try (finding)
+; volition
+; aortic valve stenosis
+; liking
+; simian acquired immunodeficiency syndrome
+; 
+treatment options
+; :; autistic disorder
+; interested (finding)
+; volition
+; 
+bad taste
+; :; liking
+; aortic valve stenosis
+; thinking
+; used by (attribute)
+; volition
+; chronic fatigue syndrome
+; liquid (finding)
+; vision
+; 
+hay fever
+; :; food hypersensitivity
+; aortic valve stenosis
+; thinking
+; hay fever
+; behavior
+; allergy testing
+; chronic fatigue syndrome
+; 
+cold symptoms
+; :; liking
+; thinking
+; volition
+; influenza
+; 
+speech and language
+; :; vision
+; autistic disorder
+; liking
+; therapeutic procedure
+; speaking, function (observable entity)
+; 
+language ability
+; :; aortic valve stenosis
+; social skills
+; language ability
+; fine motor skills
+; play
+; 
+inappropriate behavior (finding)
+; :; vision
+; butting (finding)
+; thinking
+; aortic valve stenosis
+; obsessive-compulsive disorder
+; chronic fatigue syndrome
+; 
+lyme disease
+; :; autistic disorder
+; mitochondrial diseases
+; lyme disease
+; autoimmune (qualifier value)
+; 
+bright red color (finding)
+; :; aortic valve stenosis
+; bright red color (finding)
+; does turn (finding)
+; 
+middle insomnia (disorder)
+; :; sleep
+; butting (finding)
+; vision
+; middle insomnia (disorder)
+; asleep
+; 
+hearing tests
+; :; love
+; liking
+; admitting diagnosis
+; interested (finding)
+; hope
+; happiness
+; vision
+; 
+electronystagmography
+; :; volition
+; thinking
+; used by (attribute)
+; electronystagmography
+; medical history
+; reading
+; 
+sleep disturbances
+; :; thinking
+; waking (qualifier value)
+; liking
+; chronic fatigue syndrome
+; volition
+; 
+short menstrual periods (finding)
+; :; butting (finding)
+; aortic valve stenosis
+; chronic fatigue syndrome
+; 
+seizure activity
+; :; aortic valve stenosis
+; chronic fatigue syndrome
+; seizure activity
+; electroencephalography
+; autistic disorder
+; epilepsy
+; speech
+; 
+water consumption
+; :; water consumption
+; thinking
+; eating
+; 
+chap
+; :; volition
+; liking
+; chap
+; chronic fatigue syndrome
+; used by (attribute)
+; vision
+; aortic valve stenosis
+; 
+disaffection
+; :; butting (finding)
+; asleep
+; disaffection
+; hope
+; sleep
+; aortic valve stenosis
+; 
+personal experience
+; :; volition
+; sharing
+; chronic fatigue syndrome
+; used by (attribute)
+; liking
+; 
+weight gain
+; :; aortic valve stenosis
+; age (qualifier value)
+; weight gain
+; concentration
+; liking
+; weight loss
+; vision
+; chronic fatigue syndrome
+; 
+streptococcal infections
+; :; infection of ear (disorder)
+; butting (finding)
+; fighting (finding)
+; streptococcal infections
+; killing
+; 
+influenza-like symptoms (finding)
+; :; aortic valve stenosis
+; butting (finding)
+; chronic fatigue syndrome
+; common cold
+; 
+oxidative stress
+; :; oxidative stress
+; adrenal
+; anxiety
+; 
+bruxism
+; :; thinking
+; volition
+; bruxism
+; will not try (finding)
+; 
+low grade pyrexia (finding)
+; :; butting (finding)
+; aortic valve stenosis
+; exanthema
+; common cold
+; autistic disorder
+; 
+mood swings
+; :; aortic valve stenosis
+; vision
+; mood swings
+; sleep
+; 
+immune response
+; :; butting (finding)
+; vision
+; immune response
+; aortic valve stenosis
+; thinking
+; 
+food intolerance (finding)
+; :; liking
+; volition
+; chronic fatigue syndrome
+; hypersensitivity
+; food intolerance (finding)
+; used by (attribute)
+; 
+stomach pain
+; :; liking
+; emotions
+; vision
+; thinking
+; 
+sclerosis
+; :; disease
+; sclerosis
+; x-ray computed tomography
+; scientific study
+; infection
+; autoimmune (qualifier value)
+; 
+hypotension
+; :; aortic valve stenosis
+; love
+; personal appearance
+; thinking
+; stress
+; 
+office visits
+; :; thinking
+; vision
+; aortic valve stenosis
+; will not try (finding)
+; liking
+; chronic fatigue syndrome
+; personal appearance
+; 
+gonorrhea
+; :; aortic valve stenosis
+; thinking
+; reading
+; liking
+; chronic fatigue syndrome
+; will not try (finding)
+; simian acquired immunodeficiency syndrome
+; 
+encephalitis
+; :; encephalitis
+; aortic valve stenosis
+; hypersensitivity
+; therapeutic procedure
+; stress
+; wound healing
+; 
+mental health
+; :; chronic fatigue syndrome
+; butting (finding)
+; aortic valve stenosis
+; 
+peer review
+; :; butting (finding)
+; liking
+; chronic fatigue syndrome
+; vision
+; interested (finding)
+; autistic disorder
+; 
+problem, digestive
+; :; butting (finding)
+; liking
+; volition
+; vision
+; 
+upset stomach (finding)
+; :; volition
+; thinking
+; chronic fatigue syndrome
+; 
+stalking
+; :; butting (finding)
+; 
+peripheral nervous system diseases
+; :; aortic valve stenosis
+; butting (finding)
+; hearing
+; peripheral nervous system diseases
+; 
+brain development
+; :; brain development
+; skills
+; 
+observation parameter (observable entity)
+; :; volition
+; aortic valve stenosis
+; liking
+; used by (attribute)
+; vision
+; reading
+; 
+excitement (finding)
+; :; butting (finding)
+; will not try (finding)
+; aortic valve stenosis
+; hope
+; reading
+; 
+sudden infant death syndrome
+; :; butting (finding)
+; aortic valve stenosis
+; 
+psychological inhibition
+; :; thinking
+; volition
+; used by (attribute)
+; chronic fatigue syndrome
+; butting (finding)
+; will not try (finding)
+; 
+attention span
+; :; volition
+; thinking
+; aortic valve stenosis
+; chronic fatigue syndrome
+; liking
+; 
+personal integrity
+; :; butting (finding)
+; chronic fatigue syndrome
+; vision
+; will not try (finding)
+; 
+learning difficulties (finding)
+; :; thinking
+; therapeutic procedure
+; diagnosis
+; emotions
+; reading
+; 
+obesity
+; :; diagnosis
+; disease
+; therapeutic procedure
+; obesity
+; scientific study
+; 
+grief reaction
+; :; vision
+; emotions
+; liking
+; personal appearance
+; chronic fatigue syndrome
+; butting (finding)
+; 
+teething
+; :; vision
+; thinking
+; taste
+; will not try (finding)
+; chronic fatigue syndrome
+; remembering
+; success
+; 
+motility (finding)
+; :; butting (finding)
+; thinking
+; will not try (finding)
+; aortic valve stenosis
+; chronic fatigue syndrome
+; 
+thirst
+; :; thirst
+; fatigue
+; diabetic
+; infection
+; pain
+; 
+isolation procedure
+; :; thinking
+; will not try (finding)
+; hope
+; chronic fatigue syndrome
+; personal appearance
+; 
+icterus
+; :; thinking
+; therapeutic procedure
+; reading
+; diagnosis
+; chronic fatigue syndrome
+; personal appearance
+; volition
+; 
+head tilt (finding)
+; :; butting (finding)
+; vision
+; liking
+; 
+gastroesophageal reflux disease
+; :; liking
+; thinking
+; volition
+; used by (attribute)
+; 
+oxidation, function (observable entity)
+; :; oxidation, function (observable entity)
+; liking
+; stress
+; 
+tetanus
+; :; liking
+; vision
+; chronic fatigue syndrome
+; tetanus
+; has religious belief (finding)
+; influenza
+; 
+cradle cap (disorder)
+; :; butting (finding)
+; autistic disorder
+; simian acquired immunodeficiency syndrome
+; speech
+; therapeutic procedure
+; 
+colitis, ulcerative
+; :; emotions
+; colitis, ulcerative
+; age (qualifier value)
+; disease
+; autistic disorder
+; sorting (cognition)
+; 
+panic attacks
+; :; volition
+; thinking
+; emotions
+; vision
+; 
+contraception
+; :; butting (finding)
+; autistic disorder
+; 
+unspecified encephalopathy (disorder)
+; :; butting (finding)
+; 
+energy level
+; :; liking
+; will not try (finding)
+; volition
+; 
+acidosis
+; :; aortic valve stenosis
+; chronic fatigue syndrome
+; liking
+; vision
+; butting (finding)
+; personal appearance
+; 
+disease remission
+; :; aortic valve stenosis
+; liking
+; thinking
+; chronic fatigue syndrome
+; speaking, function (observable entity)
+; 
+early intervention (education)
+; :; thinking
+; therapeutic procedure
+; volition
+; diagnosis
+; 
+fasting
+; :; liking
+; chronic fatigue syndrome
+; vision
+; volition
+; butting (finding)
+; will not try (finding)
+; 
+hemorrhagic fever with renal syndrome
+; :; will not try (finding)
+; chronic fatigue syndrome
+; thinking
+; hope
+; butting (finding)
+; personal appearance
+; 
+autoimmune diseases
+; :; aortic valve stenosis
+; therapeutic procedure
+; disease
+; personal appearance
+; autoimmune diseases
+; scientific study
+; 
+does sit up (finding)
+; :; aortic valve stenosis
+; body weight
+; 
+facial expression
+; :; butting (finding)
+; aortic valve stenosis
+; liking
+; will not try (finding)
+; 
+myocardial infarction
+; :; thinking
+; aortic valve stenosis
+; vision
+; hearing
+; personal appearance
+; 
+family history: nos (context-dependent category)
+; :; liking
+; happiness
+; hearing
+; autistic disorder
+; emotions
+; hope
+; 
+anorexia
+; :; aortic valve stenosis
+; butting (finding)
+; fever
+; does throw (finding)
+; anorexia
+; 
+barking, function (observable entity)
+; :; liking
+; volition
+; vision
+; used by (attribute)
+; chronic fatigue syndrome
+; reading
+; 
+learning disabilities
+; :; vision
+; auditory perception
+; learning disabilities
+; emotions
+; 
+plague
+; :; will not try (finding)
+; aortic valve stenosis
+; personal appearance
+; 
+recognition (psychology)
+; :; butting (finding)
+; thinking
+; personal appearance
+; used by (attribute)
+; 
+syphilis
+; :; butting (finding)
+; liking
+; vision
+; chronic fatigue syndrome
+; volition
+; experience (practice)
+; 
+communication skills (observable entity)
+; :; chronic fatigue syndrome
+; vision
+; thinking
+; autistic disorder
+; speech
+; 
+humor
+; :; volition
+; liking
+; aortic valve stenosis
+; emotions
+; will not try (finding)
+; 
+[v]other behavioral problems (context-dependent category)
+; :; aortic valve stenosis
+; will not try (finding)
+; volition
+; used by (attribute)
+; 
+common wart
+; :; aortic valve stenosis
+; thinking
+; chronic fatigue syndrome
+; liking
+; volition
+; vision
+; 
+schizophrenia
+; :; therapeutic procedure
+; vision
+; diagnosis
+; scientific study
+; 
+uptake
+; :; carcinoma of unknown primary
+; calming (procedure)
+; soak (procedure)
+; butting (finding)
+; 
+criticism
+; :; butting (finding)
+; thinking
+; vision
+; chronic fatigue syndrome
+; volition
+; 
+aging
+; :; butting (finding)
+; hearing
+; 
+pulse taking
+; :; aortic valve stenosis
+; volition
+; used by (attribute)
+; personal appearance
+; 
+contraction (finding)
+; :; thinking
+; volition
+; 
+challenge
+; :; volition
+; will not try (finding)
+; chronic fatigue syndrome
+; challenge
+; personal appearance
+; 
+mumps
+; :; aortic valve stenosis
+; therapeutic procedure
+; 
+epistaxis
+; :; chronic fatigue syndrome
+; aortic valve stenosis
+; butting (finding)
+; thinking
+; hope
+; emotions
+; hearing
+; 
+whining, function (observable entity)
+; :; aortic valve stenosis
+; chronic fatigue syndrome
+; 

@@ -1,0 +1,315 @@
+challenge tests
+; :; challenge tests
+; autistic disorder
+; simian acquired immunodeficiency syndrome
+; kaposi sarcoma
+; therapeutic procedure
+; behavior
+; 
+cracked lips (finding)
+; :; cracked lips (finding)
+; autistic disorder
+; infection
+; disease
+; exanthema
+; 
+problem behavior (finding)
+; :; butting (finding)
+; obsessive-compulsive disorder
+; aggression
+; kaposi sarcoma
+; behavioral change
+; 
+treatment protocols
+; :; autistic disorder
+; treated with (attribute)
+; chronic fatigue syndrome
+; speech therapy
+; homeopathic therapy
+; 
+cold turkey
+; :; chronic fatigue syndrome
+; influenza
+; cold turkey
+; coughing
+; herpes labialis
+; 
+diaper rash
+; :; aortic valve stenosis
+; kaposi sarcoma
+; chronic fatigue syndrome
+; pruritus
+; 
+streptococcal infections
+; :; butting (finding)
+; infection of ear (disorder)
+; fighting (finding)
+; streptococcal infections
+; killing
+; 
+lyme disease
+; :; autistic disorder
+; therapeutic procedure
+; lyme disease
+; mitochondrial diseases
+; communication
+; 
+epilepsy, absence
+; :; chronic fatigue syndrome
+; simian acquired immunodeficiency syndrome
+; electroencephalography
+; autistic disorder
+; epilepsy
+; 
+[d]failure to gain weight (context-dependent category)
+; :; butting (finding)
+; recommending
+; [d]failure to gain weight (context-dependent category)
+; 
+stomach pain
+; :; infection
+; 
+chap
+; :; aortic valve stenosis
+; chap
+; autistic disorder
+; therapeutic procedure
+; behavior
+; simian acquired immunodeficiency syndrome
+; 
+autistic children
+; :; therapeutic procedure
+; scientific study
+; autistic children
+; aortic valve stenosis
+; disease
+; 
+influenza-like symptoms (finding)
+; :; butting (finding)
+; common cold
+; influenza-like symptoms (finding)
+; infectious gastroenteritis (disorder)
+; vaccination
+; infection
+; demand (clinical)
+; 
+early intervention (education)
+; :; therapeutic procedure
+; electroconvulsive therapy
+; early intervention (education)
+; tonsillectomy and adenoidectomy (procedure)
+; kaposi sarcoma
+; 
+upset stomach (finding)
+; :; upset stomach (finding)
+; pain
+; crying
+; autistic disorder
+; screaming (finding)
+; 
+peripheral nervous system diseases
+; :; butting (finding)
+; 
+sudden infant death syndrome
+; :; sudden infant death syndrome
+; disease
+; infection
+; autistic disorder
+; 
+reminding (procedure)
+; :; aortic valve stenosis
+; kaposi sarcoma
+; simian acquired immunodeficiency syndrome
+; autistic disorder
+; 
+disabled children
+; :; simian acquired immunodeficiency syndrome
+; disabled children
+; therapeutic procedure
+; scientific study
+; electroconvulsive therapy
+; 
+fetal alcohol syndrome
+; :; butting (finding)
+; aortic valve stenosis
+; chronic fatigue syndrome
+; sharing
+; 
+mumps
+; :; butting (finding)
+; mumps
+; 
+gonorrhea
+; :; chronic fatigue syndrome
+; aortic valve stenosis
+; simian acquired immunodeficiency syndrome
+; kaposi sarcoma
+; electroconvulsive therapy
+; 
+pelvic inflammatory disease
+; :; chronic fatigue syndrome
+; kaposi sarcoma
+; simian acquired immunodeficiency syndrome
+; tic disorder
+; autistic disorder
+; recommending
+; 
+contraception
+; :; infection
+; contraception
+; disease
+; pain
+; 
+learning disabilities
+; :; behavior
+; disease
+; skills
+; infection
+; fighting (finding)
+; learning disabilities
+; educational process of instructing
+; learning disorders
+; treated with (attribute)
+; 
+social skills
+; :; social skills
+; communication
+; autistic disorder
+; behavior
+; knowledge acquisition
+; electroconvulsive therapy
+; educational process of instructing
+; 
+criticism
+; :; butting (finding)
+; chronic fatigue syndrome
+; kaposi sarcoma
+; autistic disorder
+; 
+duodenal ulcer
+; :; chronic fatigue syndrome
+; aortic valve stenosis
+; kaposi sarcoma
+; simian acquired immunodeficiency syndrome
+; buying
+; 
+peer review
+; :; autistic disorder
+; reporting
+; 
+sick child (context-dependent category)
+; :; kaposi sarcoma
+; simian acquired immunodeficiency syndrome
+; aortic valve stenosis
+; autistic disorder
+; sicca syndrome
+; advice (regime/therapy)
+; 
+challenge
+; :; chronic fatigue syndrome
+; challenge
+; tic disorder
+; simian acquired immunodeficiency syndrome
+; 
+whining, function (observable entity)
+; :; aortic valve stenosis
+; chronic fatigue syndrome
+; simian acquired immunodeficiency syndrome
+; autistic disorder
+; screaming (finding)
+; kaposi sarcoma
+; pain
+; 
+communicable diseases
+; :; butting (finding)
+; 
+omnibus personality inventory
+; :; aortic valve stenosis
+; autistic disorder
+; kaposi sarcoma
+; omnibus personality inventory
+; 
+hallucinations
+; :; butting (finding)
+; 
+paresis
+; :; infection
+; disease
+; paresis
+; attack
+; thiamine deficiency
+; 
+hepatitis
+; :; infection
+; hepatitis
+; role
+; skills
+; disease
+; precipitating factors
+; 
+fluctuation (finding)
+; :; butting (finding)
+; chronic fatigue syndrome
+; 
+cradle cap (disorder)
+; :; aortic valve stenosis
+; therapeutic procedure
+; exanthema
+; infection
+; behavior
+; pain
+; disease
+; 
+heartburn
+; :; aortic valve stenosis
+; behavior
+; diarrhea
+; 
+syphilis
+; :; butting (finding)
+; autistic disorder
+; chronic fatigue syndrome
+; therapeutic procedure
+; 
+plague
+; :; aortic valve stenosis
+; chronic fatigue syndrome
+; tic disorder
+; autistic disorder
+; simian acquired immunodeficiency syndrome
+; 
+sedation procedure
+; :; aortic valve stenosis
+; kaposi sarcoma
+; autistic disorder
+; 
+manic
+; :; chronic fatigue syndrome
+; kaposi sarcoma
+; tic disorder
+; behavior
+; sicca syndrome
+; 
+tetanus
+; :; chronic fatigue syndrome
+; 
+pica disease
+; :; aortic valve stenosis
+; chronic fatigue syndrome
+; kaposi sarcoma
+; simian acquired immunodeficiency syndrome
+; tic disorder
+; 
+medication administration: epidural (procedure)
+; :; therapeutic procedure
+; behavior
+; infection
+; tic disorder
+; simian acquired immunodeficiency syndrome
+; 
+retention
+; :; butting (finding)
+; 
+myocardial infarction
+; :; butting (finding)
+; 
