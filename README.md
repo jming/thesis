@@ -18,15 +18,16 @@ concept and anchor words selection seeds the discussion about how unstructured t
 influence and expand understanding of the enigmatic disorder, autism.
 
 Some notable components of this code include the following:
-* **Results.** The results section of the code includes the results of running the algorithm
+* [**Posts.**](https://github.com/jming/thesis/tree/master/posts) This  includes  both  the  code  for  scraping  the  forums  as  well  as  compressedversions of the raw sources scraped from forums
+* [**Exploration.**](https://github.com/jming/thesis/tree/master/results) This includes the code used in data exploration and the visualizations
+generated for these explorations and for the paper.
+* [**Pipeline.**](https://github.com/jming/thesis/tree/master/pipeline) This includes the code that can be used to run the pipeline. Instructions
+for running the pipeline are included on this page and a sample pipeline is included in
+pipeline.sh.
+* [**Results.**](https://github.com/jming/thesis/tree/master/results) The results section of the code includes the results of running the algorithm
 on both the online medical forum and electronic medical records. The textfile
 result.txt explains the parameters used to generate each result. The files are named
 with the number of anchors and files with *.topwords.translate are the files that
 include the anchor words and top words translated from CUIs in a similar format to
 those included in the tables throughout the paper.
-* **Pipeline.** This includes the code that can be used to run the pipeline. Instructions
-for running the pipeline are included on this page and a sample pipeline is included in
-pipeline.sh.
-* **Exploration.** This includes the code used in data exploration and the visualizations
-generated for these explorations and for the paper.
 
